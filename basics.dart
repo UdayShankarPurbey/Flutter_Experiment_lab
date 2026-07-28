@@ -5,4 +5,15 @@ void main() {
   stdout.write('Enter your name : ');
   var name = stdin.readLineSync();
   stdout.write("Written Name is : $name");
+
+
+  var raman = new Human();
+  var ramana = Human();
+
+  print("$raman  ,$ramana");
+}
+
+
+class Human {
+  Human();
 }
