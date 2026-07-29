@@ -12,33 +12,47 @@ void main() {
 
   // print("$raman  ,$ramana");
 
-  //declaration of a variable 
-  // int? a ; //here ? means this value may be null
-  int a ;
-  // assign value
-  a = 7; // initailiasation
-  print(a);
+//   //declaration of a variable 
+//   // int? a ; //here ? means this value may be null
+//   int a ;
+//   // assign value
+//   a = 7; // initailiasation
+//   print(a);
 
-//inline declaration
-  int b = 24;
+// //inline declaration
+//   int b = 24;
 
-  print(b);
+//   print(b);
 
-  BigInt c = BigInt.parse(('12345878787555555555'));
+//   BigInt c = BigInt.parse(('12345878787555555555'));
 
-  print(c);
+//   print(c);
 
-  double percentage = 99.26;
+//   double percentage = 99.26;
 
-  print(percentage);
+//   print(percentage);
 
-  num val = 0.12;
+//   num val = 0.12;
 
-  print(val);
+//   print(val);
 
-  bool isLoggedIn = false;
+//   bool isLoggedIn = false;
 
-  print(isLoggedIn);
+//   print(isLoggedIn);
+
+  String name = 'Raman';
+
+  var anotherName = 'Sudhir';
+
+  // name = 123; //show error 
+  // anotherName = 123; // show error 
+
+var data ;
+data = 123;
+data = 'sudhir';
+data = false ;// dynamic value .
+
+  print("$name , $anotherName");
 }
 
 
