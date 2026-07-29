@@ -147,15 +147,32 @@ void main() {
   // print(numList1);
   // // numLsit2.add(16); // it throw error 
 
-  var a = 10 ; 
-  var b = 20 ;
+  // var a = 10 ; 
+  // var b = 20 ;
 
-  if(a>=18 && b <21) {
-    print('block 1');
-  } else if(a==18 || b ==18) {
-    print("block 2");
-  } else {
-    print('block else');
+  // if(a>=18 && b <21) {
+  //   print('block 1');
+  // } else if(a==18 || b ==18) {
+  //   print("block 2");
+  // } else {
+  //   print('block else');
+  // }
+
+
+  for(int i = 0 ; i<10 ;i++) {
+    print(i);
+  }
+
+  int a = 100 ;
+
+  do  {
+    print("Number : $a");
+  } while(a<50);
+
+  int b = 1 ;
+  while(b<5) {
+    print("Number : $b");
+    b++;
   }
 }
 
