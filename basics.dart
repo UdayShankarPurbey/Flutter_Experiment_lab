@@ -54,10 +54,46 @@ void main() {
 
 //   print("$name , $anotherName");
 
-  var raman = new Human();
-  raman.printName();
-  raman.callingName('raman','ramu');
-  raman.callingName('raman','rasu');
+  // var raman = new Human();
+  // raman.printName();
+  // raman.callingName('raman','ramu');
+  // raman.callingName('raman','rasu');
+
+  var listNum = [12,34,45,67];
+  listNum.add(23);
+
+  var listNum2 = [1,2,3,4,5];
+
+  var listNum3 = [];
+  listNum3.add(1);
+  listNum3.add(2);
+  listNum3.add(3);
+  listNum3.add(4);
+
+  // listNum3.addAll(listNum2);
+
+  // listNum3.insert(2, 15);
+  // listNum3.insertAll(4,listNum2);
+  
+  // listNum3[0] = 0;
+
+  // listNum3.replaceRange(0,3,[11,12,13,14,15]);
+  // listNum3.replaceRange(0,1,[11,12,13,14,15]);
+
+  // listNum3.removeLast();
+  // listNum3.removeAt(2);
+  // listNum3.remove(1);
+  // listNum3.removeRange(0,2); // remove range not contains last value.
+
+  // print("$listNum , $listNum2 ,$listNum3");
+
+  print(listNum3.length);
+  print(listNum3.reversed);
+  print(listNum3.first);
+  print(listNum3.last);
+  print(listNum3.isEmpty);
+  print(listNum3.isNotEmpty);
+  print(listNum3.elementAt(3));
 
 
 }
