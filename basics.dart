@@ -96,36 +96,56 @@ void main() {
   // print(listNum3.elementAt(3));
 
 
-  var userInfo = {
-    "name" : "uday kumar Purbey",
-    "age" : 24,
-    "nationality" : "Indian"
-  };
+  // var userInfo = {
+  //   "name" : "uday kumar Purbey",
+  //   "age" : 24,
+  //   "nationality" : "Indian"
+  // };
 
-  userInfo["isValidVoter"] = true;
+  // userInfo["isValidVoter"] = true;
 
-  print(userInfo);
-  print(userInfo['age']);
+  // print(userInfo);
+  // print(userInfo['age']);
 
-  var employeeData = Map();
+  // var employeeData = Map();
   
-  employeeData["name"] = "xyz";
-  employeeData["companyName"] = "abc solution pvt ltd";
-  employeeData["dob"] = 2000;
-  employeeData["empId"] = "abcid4578";
+  // employeeData["name"] = "xyz";
+  // employeeData["companyName"] = "abc solution pvt ltd";
+  // employeeData["dob"] = 2000;
+  // employeeData["empId"] = "abcid4578";
 
-  print(employeeData);
+  // print(employeeData);
 
 
-  print(employeeData.isEmpty);
-  print(employeeData.isNotEmpty);
-  print(employeeData.length);
-  print(employeeData.keys);
-  print(employeeData.values);
-  print(employeeData.containsKey('companyName'));
-  print(employeeData.containsValue("xyz"));
-  print(employeeData.remove('empId'));
-  print(employeeData);
+  // print(employeeData.isEmpty);
+  // print(employeeData.isNotEmpty);
+  // print(employeeData.length);
+  // print(employeeData.keys);
+  // print(employeeData.values);
+  // print(employeeData.containsKey('companyName'));
+  // print(employeeData.containsValue("xyz"));
+  // print(employeeData.remove('empId'));
+  // print(employeeData);
+
+
+  final String name ;
+  name = "Uday Kumar Purbey";
+
+  final String user = "Uday Kumar Purbey";
+
+  // final var name2 ; // not allowed thsi is of no use 
+
+  const name2 = "Uday Shankar Purbey"; 
+  
+  //  final and const value never changes the differnece is that for final you cna assing once and then it is unchangable but fo const you have to 
+  // assign value too.intailisation and declaration in const once.
+
+  final numList1 = [1,2,3,4,5];
+  const numLsit2 = [11,12,13,14,15];
+
+  numList1.add(6);
+  print(numList1);
+  // numLsit2.add(16); // it throw error 
 
 
 }
