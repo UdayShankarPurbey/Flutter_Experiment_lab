@@ -87,13 +87,45 @@ void main() {
 
   // print("$listNum , $listNum2 ,$listNum3");
 
-  print(listNum3.length);
-  print(listNum3.reversed);
-  print(listNum3.first);
-  print(listNum3.last);
-  print(listNum3.isEmpty);
-  print(listNum3.isNotEmpty);
-  print(listNum3.elementAt(3));
+  // print(listNum3.length);
+  // print(listNum3.reversed);
+  // print(listNum3.first);
+  // print(listNum3.last);
+  // print(listNum3.isEmpty);
+  // print(listNum3.isNotEmpty);
+  // print(listNum3.elementAt(3));
+
+
+  var userInfo = {
+    "name" : "uday kumar Purbey",
+    "age" : 24,
+    "nationality" : "Indian"
+  };
+
+  userInfo["isValidVoter"] = true;
+
+  print(userInfo);
+  print(userInfo['age']);
+
+  var employeeData = Map();
+  
+  employeeData["name"] = "xyz";
+  employeeData["companyName"] = "abc solution pvt ltd";
+  employeeData["dob"] = 2000;
+  employeeData["empId"] = "abcid4578";
+
+  print(employeeData);
+
+
+  print(employeeData.isEmpty);
+  print(employeeData.isNotEmpty);
+  print(employeeData.length);
+  print(employeeData.keys);
+  print(employeeData.values);
+  print(employeeData.containsKey('companyName'));
+  print(employeeData.containsValue("xyz"));
+  print(employeeData.remove('empId'));
+  print(employeeData);
 
 
 }
