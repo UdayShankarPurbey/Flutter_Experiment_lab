@@ -128,26 +128,35 @@ void main() {
   // print(employeeData);
 
 
-  final String name ;
-  name = "Uday Kumar Purbey";
+  // final String name ;
+  // name = "Uday Kumar Purbey";
 
-  final String user = "Uday Kumar Purbey";
+  // final String user = "Uday Kumar Purbey";
 
-  // final var name2 ; // not allowed thsi is of no use 
+  // // final var name2 ; // not allowed thsi is of no use 
 
-  const name2 = "Uday Shankar Purbey"; 
+  // const name2 = "Uday Shankar Purbey"; 
   
-  //  final and const value never changes the differnece is that for final you cna assing once and then it is unchangable but fo const you have to 
-  // assign value too.intailisation and declaration in const once.
+  // //  final and const value never changes the differnece is that for final you cna assing once and then it is unchangable but fo const you have to 
+  // // assign value too.intailisation and declaration in const once.
 
-  final numList1 = [1,2,3,4,5];
-  const numLsit2 = [11,12,13,14,15];
+  // final numList1 = [1,2,3,4,5];
+  // const numLsit2 = [11,12,13,14,15];
 
-  numList1.add(6);
-  print(numList1);
-  // numLsit2.add(16); // it throw error 
+  // numList1.add(6);
+  // print(numList1);
+  // // numLsit2.add(16); // it throw error 
 
+  var a = 10 ; 
+  var b = 20 ;
 
+  if(a>=18 && b <21) {
+    print('block 1');
+  } else if(a==18 || b ==18) {
+    print("block 2");
+  } else {
+    print('block else');
+  }
 }
 
 
