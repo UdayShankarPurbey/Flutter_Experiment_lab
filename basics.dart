@@ -40,22 +40,40 @@ void main() {
 
 //   print(isLoggedIn);
 
-  String name = 'Raman';
+//   String name = 'Raman';
 
-  var anotherName = 'Sudhir';
+//   var anotherName = 'Sudhir';
 
-  // name = 123; //show error 
-  // anotherName = 123; // show error 
+//   // name = 123; //show error 
+//   // anotherName = 123; // show error 
 
-var data ;
-data = 123;
-data = 'sudhir';
-data = false ;// dynamic value .
+// var data ;
+// data = 123;
+// data = 'sudhir';
+// data = false ;// dynamic value .
 
-  print("$name , $anotherName");
+//   print("$name , $anotherName");
+
+  var raman = new Human();
+  raman.printName();
+  raman.callingName('raman','ramu');
+  raman.callingName('raman','rasu');
+
+
 }
 
 
 class Human {
   Human();
+
+  void printName()  { // declaration 
+    print('Hi From Human Class'); // defination
+  }
+
+  void callingName(String name , String localName) {
+    print("Name is $name but my another name is $localName");
+  }
+
+
 }
+
