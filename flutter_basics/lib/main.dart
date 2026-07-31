@@ -115,15 +115,31 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       */
-      body : Center(
-        child : Container(
-        width : 100,
-        height :  100,
-        color : const Color.fromARGB(255, 205, 255, 68),
-        child : Text("Hi From Uday")
-        )
-      )
-       ,
+      // body : Center(
+      //   child : Container(
+      //   width : 100,
+      //   height :  100,
+      //   color : const Color.fromARGB(255, 205, 255, 68),
+      //   child : Text("Hi From Uday")
+      //   )
+      // )
+      body: Center(
+        child: Container(
+          width: 200,
+          height: 100,
+          color: Colors.grey,
+          child: Center(
+            child: Text(
+              "Hi Uday",
+              style: TextStyle(
+                fontFamily: 'Pacifico',
+                fontStyle: FontStyle.italic,
+                fontSize: 30,
+              ),
+            ),
+          ),
+        ),
+      ),
       /*
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
