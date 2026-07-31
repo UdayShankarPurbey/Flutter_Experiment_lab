@@ -115,6 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       */
+      // // TOPICS : CONTAINER WIDGET :-
       // body : Center(
       //   child : Container(
       //   width : 100,
@@ -123,23 +124,34 @@ class _MyHomePageState extends State<MyHomePage> {
       //   child : Text("Hi From Uday")
       //   )
       // )
-      body: Center(
-        child: Container(
-          width: 200,
-          height: 100,
-          color: Colors.grey,
-          child: Center(
-            child: Text(
-              "Hi Uday",
-              style: TextStyle(
-                fontFamily: 'Pacifico',
-                fontStyle: FontStyle.italic,
-                fontSize: 30,
-              ),
-            ),
-          ),
-        ),
-      ),
+
+      // // TOPICS : CENTER WIDGET :-
+      // body: Center(
+      //   child: Container(
+      //     width: 200,
+      //     height: 100,
+      //     color: Colors.grey,
+      //     child: Center(
+      //       child: Text(
+      //         "Hi Uday",
+      //         style: TextStyle(
+      //           fontFamily: 'Pacifico',
+      //           fontStyle: FontStyle.italic,
+      //           fontSize: 30,
+      //         ),
+      //       ),
+      //     ),
+      //   ),
+      // ),
+
+      // TOPICS : TEXT WIDGET :-
+      body : Text("Hi Uday" , style: TextStyle(
+        fontSize: 24,
+        color: Colors.lightBlue,
+        fontWeight: FontWeight.w200,
+        backgroundColor: Colors.lightGreen[200]
+      ),),
+
       /*
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
