@@ -157,7 +157,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
       // // TOPICS : BUTTON WIDGET :-
       //   // SUB-TOPIC : TEXT BUTTON WIDGET :-
-
       // body: TextButton(
       //   child: Text("Buy Now"),
       //   onPressed: () {
@@ -175,15 +174,19 @@ class _MyHomePageState extends State<MyHomePage> {
       //   },
       // ),
 
-      // // TOPICS : BUTTON WIDGET :-
-      //   // SUB-TOPIC : OUTLINED BUTTON WIDGET :-
-      body: OutlinedButton(
-        onPressed: () {
-          print("Button Pressed");
-        },
-        child: Text("Click Now !"),
-      ),
+      // // // TOPICS : BUTTON WIDGET :-
+      // //   // SUB-TOPIC : OUTLINED BUTTON WIDGET :-
+      // body: OutlinedButton(
+      //   onPressed: () {
+      //     print("Button Pressed");
+      //   },
+      //   child: Text("Click Now !"),
+      // ),
 
+      // // // TOPICS : IMAGE WIDGET :-
+      body : Center(
+        child : Image.asset("assets/images/user-image-02.png")
+      )
 
   
 
