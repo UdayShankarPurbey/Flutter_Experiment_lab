@@ -255,23 +255,187 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ],
       //   ),
       // ),
-      body: Center(
-        child: InkWell(
-          onTap: () => {print("User Perform Tap Operation")},
-          onLongPress: () {
-            print("User Perform Long Press Operation");
-          },
-          onDoubleTap: () => {print("User Perform Double Tap Operation")},
-          child: Container(
-            height: 100,
-            width: 100,
-            color: Colors.tealAccent,
-            child: Center(
-              child: InkWell(
-                onTap: () => print("User Click on Text."),
-                child: Text("Click Here !"),
+
+      // // // TOPICS : INKWELL WIDGET :-
+      // body: Center(
+      //   child: InkWell(
+      //     onTap: () => {print("User Perform Tap Operation")},
+      //     onLongPress: () {
+      //       print("User Perform Long Press Operation");
+      //     },
+      //     onDoubleTap: () => {print("User Perform Double Tap Operation")},
+      //     child: Container(
+      //       height: 100,
+      //       width: 100,
+      //       color: Colors.tealAccent,
+      //       child: Center(
+      //         child: InkWell(
+      //           onTap: () => print("User Click on Text."),
+      //           child: Text("Click Here !"),
+      //         ),
+      //       ),
+      //     ),
+      //   ),
+      // ),
+
+      // // TOPICS : SINGLE CHILD SCROLL VIEW WIDGET :-
+      body: SingleChildScrollView(
+          // scrollDirection: Axis.vertical,
+        child: Padding(
+          padding: EdgeInsetsGeometry.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Container(
+                      height: 200,
+                      width: 200,
+                      color: Colors.tealAccent,
+                      margin: EdgeInsets.all(2.0),
+                      child: Text("BOX - 1 "),
+                    ),
+                    Container(
+                      height: 200,
+                      width: 200,
+                      color: Colors.lime,
+                      margin: EdgeInsets.all(2.0),
+                      child: Text("BOX - 2 "),
+                    ),
+                    Container(
+                      height: 200,
+                      width: 200,
+                      color: Colors.redAccent,
+                      margin: EdgeInsets.all(2.0),
+                      child: Text("BOX - 3 "),
+                    ),
+                    Container(
+                      height: 200,
+                      width: 200,
+                      color: Colors.orange,
+                      margin: EdgeInsets.all(2.0),
+                      child: Text("BOX - 4 "),
+                    ),
+                    Container(
+                      height: 200,
+                      width: 200,
+                      color: Colors.greenAccent,
+                      margin: EdgeInsets.all(2.0),
+                      child: Text("BOX - 5 "),
+                    ),
+                  
+                   Container(
+                      height: 200,
+                      width: 200,
+                      color: Colors.tealAccent,
+                      margin: EdgeInsets.all(2.0),
+                      child: Text("BOX - 6 "),
+                    ),
+                    Container(
+                      height: 200,
+                      width: 200,
+                      color: Colors.lime,
+                      margin: EdgeInsets.all(2.0),
+                      child: Text("BOX - 7 "),
+                    ),
+                    Container(
+                      height: 200,
+                      width: 200,
+                      color: Colors.redAccent,
+                      margin: EdgeInsets.all(2.0),
+                      child: Text("BOX - 8 "),
+                    ),
+                    Container(
+                      height: 200,
+                      width: 200,
+                      color: Colors.orange,
+                      margin: EdgeInsets.all(2.0),
+                      child: Text("BOX - 9 "),
+                    ),
+                    Container(
+                      height: 200,
+                      width: 200,
+                      color: Colors.greenAccent,
+                      margin: EdgeInsets.all(2.0),
+                      child: Text("BOX - 10 "),
+                    ),
+                  
+                    Container(
+                      height: 200,
+                      width: 200,
+                      color: Colors.tealAccent,
+                      margin: EdgeInsets.all(2.0),
+                      child: Text("BOX - 11 "),
+                    ),
+                    Container(
+                      height: 200,
+                      width: 200,
+                      color: Colors.lime,
+                      margin: EdgeInsets.all(2.0),
+                      child: Text("BOX - 12 "),
+                    ),
+                    Container(
+                      height: 200,
+                      width: 200,
+                      color: Colors.redAccent,
+                      margin: EdgeInsets.all(2.0),
+                      child: Text("BOX - 13 "),
+                    ),
+                    Container(
+                      height: 200,
+                      width: 200,
+                      color: Colors.orange,
+                      margin: EdgeInsets.all(2.0),
+                      child: Text("BOX - 14 "),
+                    ),
+                    Container(
+                      height: 200,
+                      width: 200,
+                      color: Colors.greenAccent,
+                      margin: EdgeInsets.all(2.0),
+                      child: Text("BOX - 15 "),
+                    ),
+                  ],
+                ),
               ),
-            ),
+              Container(
+                height: 200,
+                width: 200,
+                color: Colors.tealAccent,
+                margin: EdgeInsets.only(bottom: 10),
+                child: Text("BOX - 1 "),
+              ),
+              Container(
+                height: 200,
+                width: 200,
+                color: Colors.lime,
+                margin: EdgeInsets.only(bottom: 10),
+                child: Text("BOX - 2 "),
+              ),
+              Container(
+                height: 200,
+                width: 200,
+                color: Colors.redAccent,
+                margin: EdgeInsets.only(bottom: 10),
+                child: Text("BOX - 3 "),
+              ),
+              Container(
+                height: 200,
+                width: 200,
+                color: Colors.orange,
+                margin: EdgeInsets.only(bottom: 10),
+                child: Text("BOX - 4 "),
+              ),
+              Container(
+                height: 200,
+                width: 200,
+                color: Colors.greenAccent,
+                margin: EdgeInsets.only(bottom: 10),
+                child: Text("BOX - 5 "),
+              ),
+            ],
           ),
         ),
       ),
