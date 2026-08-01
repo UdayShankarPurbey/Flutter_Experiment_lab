@@ -86,6 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
+
       /*
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -228,30 +229,50 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
 
-      // // // // TOPICS : COLUMNS AND ROWS WIDGET :-
-      // //   // SUB-TOPIC :COLUMNS AND ROWS:-
-      body: Container(
-        height : 500,
-        color:  Colors.lightGreen,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text("R1-A", style: TextStyle(fontSize: 22)),
-                Text("R1-B", style: TextStyle(fontSize: 22)),
-                Text("R1-C", style: TextStyle(fontSize: 22)),
-                Text("R1-D", style: TextStyle(fontSize: 22)),
-                Text("R1-E", style: TextStyle(fontSize: 22)),
-              ],
+      // // // // // TOPICS : COLUMNS AND ROWS WIDGET :-
+      // // //   // SUB-TOPIC :COLUMNS AND ROWS:-
+      // body: Container(
+      //   height : 500,
+      //   color:  Colors.lightGreen,
+      //   child: Column(
+      //     crossAxisAlignment: CrossAxisAlignment.start,
+      //     children: [
+      //       Row(
+      //         mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //         children: [
+      //           Text("R1-A", style: TextStyle(fontSize: 22)),
+      //           Text("R1-B", style: TextStyle(fontSize: 22)),
+      //           Text("R1-C", style: TextStyle(fontSize: 22)),
+      //           Text("R1-D", style: TextStyle(fontSize: 22)),
+      //           Text("R1-E", style: TextStyle(fontSize: 22)),
+      //         ],
+      //       ),
+      //       Text("A", style: TextStyle(fontSize: 22)),
+      //       Text("B", style: TextStyle(fontSize: 22)),
+      //       Text("C", style: TextStyle(fontSize: 22)),
+      //       Text("D", style: TextStyle(fontSize: 22)),
+      //       Text("E", style: TextStyle(fontSize: 22)),
+      //     ],
+      //   ),
+      // ),
+      body: Center(
+        child: InkWell(
+          onTap: () => {print("User Perform Tap Operation")},
+          onLongPress: () {
+            print("User Perform Long Press Operation");
+          },
+          onDoubleTap: () => {print("User Perform Double Tap Operation")},
+          child: Container(
+            height: 100,
+            width: 100,
+            color: Colors.tealAccent,
+            child: Center(
+              child: InkWell(
+                onTap: () => print("User Click on Text."),
+                child: Text("Click Here !"),
+              ),
             ),
-            Text("A", style: TextStyle(fontSize: 22)),
-            Text("B", style: TextStyle(fontSize: 22)),
-            Text("C", style: TextStyle(fontSize: 22)),
-            Text("D", style: TextStyle(fontSize: 22)),
-            Text("E", style: TextStyle(fontSize: 22)),
-          ],
+          ),
         ),
       ),
 
