@@ -144,13 +144,48 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
 
-      // TOPICS : TEXT WIDGET :-
-      body : Text("Hi Uday" , style: TextStyle(
-        fontSize: 24,
-        color: Colors.lightBlue,
-        fontWeight: FontWeight.w200,
-        backgroundColor: Colors.lightGreen[200]
-      ),),
+      // // TOPICS : TEXT WIDGET :-
+      // body: Text(
+      //   "Hi Uday",
+      //   style: TextStyle(
+      //     fontSize: 24,
+      //     color: Colors.lightBlue,
+      //     fontWeight: FontWeight.w200,
+      //     backgroundColor: Colors.lightGreen[200],
+      //   ),
+      // ),
+
+      // // TOPICS : BUTTON WIDGET :-
+      //   // SUB-TOPIC : TEXT BUTTON WIDGET :-
+
+      // body: TextButton(
+      //   child: Text("Buy Now"),
+      //   onPressed: () {
+      //     print("User Click on Button");
+      //   },
+      //   onLongPress: () => {print("Long Press Executed.")},
+      // ),
+
+      // // // TOPICS : BUTTON WIDGET :-
+      // //   // SUB-TOPIC : ELEVATED BUTTON WIDGET :-
+      // body: ElevatedButton(
+      //   child: Text("Buy Now"),
+      //   onPressed: () {
+      //     print("User Click");
+      //   },
+      // ),
+
+      // // TOPICS : BUTTON WIDGET :-
+      //   // SUB-TOPIC : OUTLINED BUTTON WIDGET :-
+      body: OutlinedButton(
+        onPressed: () {
+          print("Button Pressed");
+        },
+        child: Text("Click Now !"),
+      ),
+
+
+  
 
       /*
       floatingActionButton: FloatingActionButton(
