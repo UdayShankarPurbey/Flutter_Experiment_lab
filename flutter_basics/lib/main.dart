@@ -184,11 +184,76 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       // // // TOPICS : IMAGE WIDGET :-
-      body : Center(
-        child : Image.asset("assets/images/user-image-02.png")
-      )
+      // body : Center(
+      //   child : Image.asset("assets/images/user-image-02.png")
+      // )
 
-  
+      // // // // TOPICS : COLUMNS AND ROWS WIDGET :-
+      // //   // SUB-TOPIC : COLUMNS WIDGET :-
+
+      //  body: Container(
+      //   height: 500,
+      //   width: 500,
+      //   color: Colors.red,
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //     crossAxisAlignment: CrossAxisAlignment.stretch,
+      //     children: [
+      //       Text("A", style: TextStyle(fontSize: 25)),
+      //       Text("B", style: TextStyle(fontSize: 25)),
+      //       Text("C", style: TextStyle(fontSize: 25)),
+      //       Text("D", style: TextStyle(fontSize: 25)),
+      //       Text("E", style: TextStyle(fontSize: 25)),
+      //       ElevatedButton(child: Text("Buy Now !") , onPressed: () {},)
+      //     ],
+      //   ),
+      // ),
+
+      // // // // TOPICS : COLUMNS AND ROWS WIDGET :-
+      // //   // SUB-TOPIC : ROWS WIDGET :-
+      // body: Container(
+      //   height: 300,
+      //   width: 500,
+      //   color: Colors.red,
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //     crossAxisAlignment: CrossAxisAlignment.end,
+      //     children: <Text>[
+      //       Text("A", style: TextStyle(fontSize: 25)),
+      //       Text("B", style: TextStyle(fontSize: 25)),
+      //       Text("C", style: TextStyle(fontSize: 25)),
+      //       Text("D", style: TextStyle(fontSize: 25)),
+      //       Text("E", style: TextStyle(fontSize: 25)),
+      //     ],
+      //   ),
+      // ),
+
+      // // // // TOPICS : COLUMNS AND ROWS WIDGET :-
+      // //   // SUB-TOPIC :COLUMNS AND ROWS:-
+      body: Container(
+        height : 500,
+        color:  Colors.lightGreen,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text("R1-A", style: TextStyle(fontSize: 22)),
+                Text("R1-B", style: TextStyle(fontSize: 22)),
+                Text("R1-C", style: TextStyle(fontSize: 22)),
+                Text("R1-D", style: TextStyle(fontSize: 22)),
+                Text("R1-E", style: TextStyle(fontSize: 22)),
+              ],
+            ),
+            Text("A", style: TextStyle(fontSize: 22)),
+            Text("B", style: TextStyle(fontSize: 22)),
+            Text("C", style: TextStyle(fontSize: 22)),
+            Text("D", style: TextStyle(fontSize: 22)),
+            Text("E", style: TextStyle(fontSize: 22)),
+          ],
+        ),
+      ),
 
       /*
       floatingActionButton: FloatingActionButton(
