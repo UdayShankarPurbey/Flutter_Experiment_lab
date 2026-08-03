@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  var user_name = ["Uday", "Niti", "user_3", "user_4", "user_5"];
+  var user_name = ["Uday", "Nitish", "Raghav", "Sudesh", "Prabhash"];
 
   @override
   Widget build(BuildContext context) {
@@ -598,21 +598,41 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       // // TOPICS : MARGIN & PADDING  :-
-      body: Padding(
-        // padding: const EdgeInsets.all(8.0),
-        padding: EdgeInsetsGeometry.only(left: 10),
-        child: Container(
-          height: 50,
-          width: 200,
-          color: Colors.cyan,
-          margin: EdgeInsets.all(8.0), // provides space form outside
-          padding: EdgeInsets.all(8.0), // provides space form inside
-          child: Text(
-            "Hello World",
-            style: TextStyle(fontSize: 24, color: Colors.white),
-          ),
-        ),
+      // body: Padding(
+      //   // padding: const EdgeInsets.all(8.0),
+      //   padding: EdgeInsetsGeometry.only(left: 10),
+      //   child: Container(
+      //     height: 50,
+      //     width: 200,
+      //     color: Colors.cyan,
+      //     margin: EdgeInsets.all(8.0), // provides space form outside
+      //     padding: EdgeInsets.all(8.0), // provides space form inside
+      //     child: Text(
+      //       "Hello World",
+      //       style: TextStyle(fontSize: 24, color: Colors.white),
+      //     ),
+      //   ),
+      // ),
+
+      // // TOPICS : LIST TILE  :-
+      body: ListView.separated(
+        itemCount: user_name.length,
+        separatorBuilder: (BuildContext context, int index) {
+          return Divider(
+            thickness: 4,
+            height: 10,
+          );
+        },
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(
+            leading: Text("${index + 1}"),
+            title: Text(user_name[index]),
+            subtitle: Text("Person ${index + 1} is ${user_name[index]}"),
+            trailing: Icon(Icons.add)
+          );
+        },
       ),
+
 
       /*
       floatingActionButton: FloatingActionButton(
