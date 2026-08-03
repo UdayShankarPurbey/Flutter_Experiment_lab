@@ -614,25 +614,36 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
 
-      // // TOPICS : LIST TILE  :-
-      body: ListView.separated(
-        itemCount: user_name.length,
-        separatorBuilder: (BuildContext context, int index) {
-          return Divider(
-            thickness: 4,
-            height: 10,
-          );
-        },
-        itemBuilder: (BuildContext context, int index) {
-          return ListTile(
-            leading: Text("${index + 1}"),
-            title: Text(user_name[index]),
-            subtitle: Text("Person ${index + 1} is ${user_name[index]}"),
-            trailing: Icon(Icons.add)
-          );
-        },
-      ),
+      // // // TOPICS : LIST TILE  :-
+      // body: ListView.separated(
+      //   itemCount: user_name.length,
+      //   separatorBuilder: (BuildContext context, int index) {
+      //     return Divider(
+      //       thickness: 4,
+      //       height: 10,
+      //     );
+      //   },
+      //   itemBuilder: (BuildContext context, int index) {
+      //     return ListTile(
+      //       leading: Text("${index + 1}"),
+      //       title: Text(user_name[index]),
+      //       subtitle: Text("Person ${index + 1} is ${user_name[index]}"),
+      //       trailing: Icon(Icons.add)
+      //     );
+      //   },
+      // ),
 
+      // // TOPICS : CIRCLE AVATAR  :-
+      body: Center(
+        child: CircleAvatar(
+          child: Text("U", style: TextStyle(fontSize: 18)),
+          backgroundImage: AssetImage("assets/images/user-image-02.png"),
+          backgroundColor: Colors.greenAccent,
+          radius: 50,
+          // minRadius: 20,
+          // maxRadius: 100,
+        ),
+      ),
 
       /*
       floatingActionButton: FloatingActionButton(
