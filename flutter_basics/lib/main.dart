@@ -68,6 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  var user_name = ["Uday" , "Niti" , "user_3" , "user_4" , "user_5"];
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -191,7 +193,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
       // // // // TOPICS : COLUMNS AND ROWS WIDGET :-
       // //   // SUB-TOPIC : COLUMNS WIDGET :-
-
       //  body: Container(
       //   height: 500,
       //   width: 500,
@@ -278,167 +279,239 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
 
-      // // TOPICS : SINGLE CHILD SCROLL VIEW WIDGET :-
-      body: SingleChildScrollView(
-          // scrollDirection: Axis.vertical,
-        child: Padding(
-          padding: EdgeInsetsGeometry.all(8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Container(
-                      height: 200,
-                      width: 200,
-                      color: Colors.tealAccent,
-                      margin: EdgeInsets.all(2.0),
-                      child: Text("BOX - 1 "),
-                    ),
-                    Container(
-                      height: 200,
-                      width: 200,
-                      color: Colors.lime,
-                      margin: EdgeInsets.all(2.0),
-                      child: Text("BOX - 2 "),
-                    ),
-                    Container(
-                      height: 200,
-                      width: 200,
-                      color: Colors.redAccent,
-                      margin: EdgeInsets.all(2.0),
-                      child: Text("BOX - 3 "),
-                    ),
-                    Container(
-                      height: 200,
-                      width: 200,
-                      color: Colors.orange,
-                      margin: EdgeInsets.all(2.0),
-                      child: Text("BOX - 4 "),
-                    ),
-                    Container(
-                      height: 200,
-                      width: 200,
-                      color: Colors.greenAccent,
-                      margin: EdgeInsets.all(2.0),
-                      child: Text("BOX - 5 "),
-                    ),
-                  
-                   Container(
-                      height: 200,
-                      width: 200,
-                      color: Colors.tealAccent,
-                      margin: EdgeInsets.all(2.0),
-                      child: Text("BOX - 6 "),
-                    ),
-                    Container(
-                      height: 200,
-                      width: 200,
-                      color: Colors.lime,
-                      margin: EdgeInsets.all(2.0),
-                      child: Text("BOX - 7 "),
-                    ),
-                    Container(
-                      height: 200,
-                      width: 200,
-                      color: Colors.redAccent,
-                      margin: EdgeInsets.all(2.0),
-                      child: Text("BOX - 8 "),
-                    ),
-                    Container(
-                      height: 200,
-                      width: 200,
-                      color: Colors.orange,
-                      margin: EdgeInsets.all(2.0),
-                      child: Text("BOX - 9 "),
-                    ),
-                    Container(
-                      height: 200,
-                      width: 200,
-                      color: Colors.greenAccent,
-                      margin: EdgeInsets.all(2.0),
-                      child: Text("BOX - 10 "),
-                    ),
-                  
-                    Container(
-                      height: 200,
-                      width: 200,
-                      color: Colors.tealAccent,
-                      margin: EdgeInsets.all(2.0),
-                      child: Text("BOX - 11 "),
-                    ),
-                    Container(
-                      height: 200,
-                      width: 200,
-                      color: Colors.lime,
-                      margin: EdgeInsets.all(2.0),
-                      child: Text("BOX - 12 "),
-                    ),
-                    Container(
-                      height: 200,
-                      width: 200,
-                      color: Colors.redAccent,
-                      margin: EdgeInsets.all(2.0),
-                      child: Text("BOX - 13 "),
-                    ),
-                    Container(
-                      height: 200,
-                      width: 200,
-                      color: Colors.orange,
-                      margin: EdgeInsets.all(2.0),
-                      child: Text("BOX - 14 "),
-                    ),
-                    Container(
-                      height: 200,
-                      width: 200,
-                      color: Colors.greenAccent,
-                      margin: EdgeInsets.all(2.0),
-                      child: Text("BOX - 15 "),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                height: 200,
-                width: 200,
-                color: Colors.tealAccent,
-                margin: EdgeInsets.only(bottom: 10),
-                child: Text("BOX - 1 "),
-              ),
-              Container(
-                height: 200,
-                width: 200,
-                color: Colors.lime,
-                margin: EdgeInsets.only(bottom: 10),
-                child: Text("BOX - 2 "),
-              ),
-              Container(
-                height: 200,
-                width: 200,
-                color: Colors.redAccent,
-                margin: EdgeInsets.only(bottom: 10),
-                child: Text("BOX - 3 "),
-              ),
-              Container(
-                height: 200,
-                width: 200,
-                color: Colors.orange,
-                margin: EdgeInsets.only(bottom: 10),
-                child: Text("BOX - 4 "),
-              ),
-              Container(
-                height: 200,
-                width: 200,
-                color: Colors.greenAccent,
-                margin: EdgeInsets.only(bottom: 10),
-                child: Text("BOX - 5 "),
-              ),
-            ],
-          ),
-        ),
+      // // // TOPICS : SINGLE CHILD SCROLL VIEW WIDGET :-
+      // body: SingleChildScrollView(
+      //     // scrollDirection: Axis.vertical,
+      //   child: Padding(
+      //     padding: EdgeInsetsGeometry.all(8.0),
+      //     child: Column(
+      //       crossAxisAlignment: CrossAxisAlignment.start,
+      //       children: [
+      //         SingleChildScrollView(
+      //           scrollDirection: Axis.horizontal,
+      //           child: Row(
+      //             children: [
+      //               Container(
+      //                 height: 200,
+      //                 width: 200,
+      //                 color: Colors.tealAccent,
+      //                 margin: EdgeInsets.all(2.0),
+      //                 child: Text("BOX - 1 "),
+      //               ),
+      //               Container(
+      //                 height: 200,
+      //                 width: 200,
+      //                 color: Colors.lime,
+      //                 margin: EdgeInsets.all(2.0),
+      //                 child: Text("BOX - 2 "),
+      //               ),
+      //               Container(
+      //                 height: 200,
+      //                 width: 200,
+      //                 color: Colors.redAccent,
+      //                 margin: EdgeInsets.all(2.0),
+      //                 child: Text("BOX - 3 "),
+      //               ),
+      //               Container(
+      //                 height: 200,
+      //                 width: 200,
+      //                 color: Colors.orange,
+      //                 margin: EdgeInsets.all(2.0),
+      //                 child: Text("BOX - 4 "),
+      //               ),
+      //               Container(
+      //                 height: 200,
+      //                 width: 200,
+      //                 color: Colors.greenAccent,
+      //                 margin: EdgeInsets.all(2.0),
+      //                 child: Text("BOX - 5 "),
+      //               ),
+      //              Container(
+      //                 height: 200,
+      //                 width: 200,
+      //                 color: Colors.tealAccent,
+      //                 margin: EdgeInsets.all(2.0),
+      //                 child: Text("BOX - 6 "),
+      //               ),
+      //               Container(
+      //                 height: 200,
+      //                 width: 200,
+      //                 color: Colors.lime,
+      //                 margin: EdgeInsets.all(2.0),
+      //                 child: Text("BOX - 7 "),
+      //               ),
+      //               Container(
+      //                 height: 200,
+      //                 width: 200,
+      //                 color: Colors.redAccent,
+      //                 margin: EdgeInsets.all(2.0),
+      //                 child: Text("BOX - 8 "),
+      //               ),
+      //               Container(
+      //                 height: 200,
+      //                 width: 200,
+      //                 color: Colors.orange,
+      //                 margin: EdgeInsets.all(2.0),
+      //                 child: Text("BOX - 9 "),
+      //               ),
+      //               Container(
+      //                 height: 200,
+      //                 width: 200,
+      //                 color: Colors.greenAccent,
+      //                 margin: EdgeInsets.all(2.0),
+      //                 child: Text("BOX - 10 "),
+      //               ),
+      //               Container(
+      //                 height: 200,
+      //                 width: 200,
+      //                 color: Colors.tealAccent,
+      //                 margin: EdgeInsets.all(2.0),
+      //                 child: Text("BOX - 11 "),
+      //               ),
+      //               Container(
+      //                 height: 200,
+      //                 width: 200,
+      //                 color: Colors.lime,
+      //                 margin: EdgeInsets.all(2.0),
+      //                 child: Text("BOX - 12 "),
+      //               ),
+      //               Container(
+      //                 height: 200,
+      //                 width: 200,
+      //                 color: Colors.redAccent,
+      //                 margin: EdgeInsets.all(2.0),
+      //                 child: Text("BOX - 13 "),
+      //               ),
+      //               Container(
+      //                 height: 200,
+      //                 width: 200,
+      //                 color: Colors.orange,
+      //                 margin: EdgeInsets.all(2.0),
+      //                 child: Text("BOX - 14 "),
+      //               ),
+      //               Container(
+      //                 height: 200,
+      //                 width: 200,
+      //                 color: Colors.greenAccent,
+      //                 margin: EdgeInsets.all(2.0),
+      //                 child: Text("BOX - 15 "),
+      //               ),
+      //             ],
+      //           ),
+      //         ),
+      //         Container(
+      //           height: 200,
+      //           width: 200,
+      //           color: Colors.tealAccent,
+      //           margin: EdgeInsets.only(bottom: 10),
+      //           child: Text("BOX - 1 "),
+      //         ),
+      //         Container(
+      //           height: 200,
+      //           width: 200,
+      //           color: Colors.lime,
+      //           margin: EdgeInsets.only(bottom: 10),
+      //           child: Text("BOX - 2 "),
+      //         ),
+      //         Container(
+      //           height: 200,
+      //           width: 200,
+      //           color: Colors.redAccent,
+      //           margin: EdgeInsets.only(bottom: 10),
+      //           child: Text("BOX - 3 "),
+      //         ),
+      //         Container(
+      //           height: 200,
+      //           width: 200,
+      //           color: Colors.orange,
+      //           margin: EdgeInsets.only(bottom: 10),
+      //           child: Text("BOX - 4 "),
+      //         ),
+      //         Container(
+      //           height: 200,
+      //           width: 200,
+      //           color: Colors.greenAccent,
+      //           margin: EdgeInsets.only(bottom: 10),
+      //           child: Text("BOX - 5 "),
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
+
+      // // // TOPICS : LISTVIEW AND ITS COMPONENTS :-
+      // //   // SUB-TOPIC : LISTVIEW WIDGET :-
+      // body: Center(
+      //   child: ListView(
+      //     scrollDirection:Axis.horizontal,
+      //     reverse: true,
+      //     children: [
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Text(
+      //           "one",
+      //           style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22),
+      //         ),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Text(
+      //           "two",
+      //           style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22),
+      //         ),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Text(
+      //           "three",
+      //           style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22),
+      //         ),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Text(
+      //           "four",
+      //           style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22),
+      //         ),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Text(
+      //           "five",
+      //           style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22),
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
+
+      // // // TOPICS : LISTVIEW AND ITS COMPONENTS :-
+      // //   // SUB-TOPIC : LISTVIEW BUILDER WIDGET :-
+      // body : ListView.builder(
+      //   itemCount: user_name.length,
+      //   itemBuilder: (BuildContext context, int index) {
+      //     return Text(user_name[index] , style: TextStyle(fontSize: 21 , fontWeight: FontWeight.w600));
+      //   },
+      //   // reverse: true,
+      //   itemExtent: 100,
+      //   scrollDirection: Axis.horizontal,
+
+      // ),
+
+      // // TOPICS : LISTVIEW AND ITS COMPONENTS :-
+      //   // SUB-TOPIC : LISTVIEW SEPERATOR WIDGET :-
+      body : ListView.separated(
+        itemCount: user_name.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Text(user_name[index] , style: TextStyle(fontSize: 21 , fontWeight: FontWeight.w600));
+        },
+        separatorBuilder: (context, index) {
+          return Divider(height:4 , thickness: 4,);
+        },
+
       ),
+
+
 
       /*
       floatingActionButton: FloatingActionButton(
