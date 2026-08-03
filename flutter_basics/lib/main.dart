@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  var user_name = ["Uday" , "Niti" , "user_3" , "user_4" , "user_5"];
+  var user_name = ["Uday", "Niti", "user_3", "user_4", "user_5"];
 
   @override
   Widget build(BuildContext context) {
@@ -509,32 +509,95 @@ class _MyHomePageState extends State<MyHomePage> {
       //   },
       // ),
 
-      // // // TOPICS : BOX DECORATION  :-
-      body : Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.blue.shade50,
-        child: Center(
-          child: Container(
-            width: 100,
-            height: 100,
-            decoration: BoxDecoration(
-              color: Colors.blueGrey,
-              // borderRadius: BorderRadius.circular(10)
-              // borderRadius: BorderRadius.only(topLeft: Radius.circular(20) , bottomRight: Radius.circular(20)),
-              border: Border.all(color: Colors.black54 , width: 2),
-              boxShadow: [BoxShadow(
-                color: const Color.fromARGB(66, 24, 23, 23),
-                blurRadius: 5,
-                spreadRadius: 7
-              )],
-              shape: BoxShape.circle
-            ),
+      // // // // TOPICS : BOX DECORATION  :-
+      // body : Container(
+      //   width: double.infinity,
+      //   height: double.infinity,
+      //   color: Colors.blue.shade50,
+      //   child: Center(
+      //     child: Container(
+      //       width: 100,
+      //       height: 100,
+      //       decoration: BoxDecoration(
+      //         color: Colors.blueGrey,
+      //         // borderRadius: BorderRadius.circular(10)
+      //         // borderRadius: BorderRadius.only(topLeft: Radius.circular(20) , bottomRight: Radius.circular(20)),
+      //         border: Border.all(color: Colors.black54 , width: 2),
+      //         boxShadow: [BoxShadow(
+      //           color: const Color.fromARGB(66, 24, 23, 23),
+      //           blurRadius: 5,
+      //           spreadRadius: 7
+      //         )],
+      //         shape: BoxShape.circle
+      //       ),
+      //     ),
+      //   ),
+      // )
 
+      // // TOPICS : EXPANDED WIDGET  :-
+      body: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Column(
+
+            children: [
+              Expanded(
+                child: Container(width: 50, height: 100, color: Colors.blue),
+                flex: 3,
+              ),
+              Expanded(
+                child: Container(width: 50, height: 100, color: Colors.red),
+                flex: 1,
+              ),
+              Expanded(
+                child: Container(width: 50, height: 100, color: Colors.amber),
+                flex: 1,
+              ),
+              Expanded(
+                child: Container(width: 50, height: 100, color: Colors.green),
+                flex: 1,
+              ),
+              Expanded(
+                child: Container(width: 50, height: 100, color: Colors.pink),
+                flex: 1,
+              ),
+              Expanded(
+                child: Container(
+                  width: 50,
+                  height: 100,
+                  color: Colors.tealAccent,
+                ),
+                flex: 3,
+              ),
+            ],
           ),
-        ),
-      )
-
+          
+          Expanded(
+            child: Container(width: 50, height: 100, color: Colors.blue),
+            flex: 1,
+          ),
+          Expanded(
+            child: Container(width: 50, height: 100, color: Colors.red),
+            flex: 1,
+          ),
+          Expanded(
+            child: Container(width: 50, height: 100, color: Colors.amber),
+            flex: 1,
+          ),
+          Expanded(
+            child: Container(width: 50, height: 100, color: Colors.green),
+            flex: 1,
+          ),
+          Expanded(
+            child: Container(width: 50, height: 100, color: Colors.pink),
+            flex: 1,
+          ),
+          Expanded(
+            child: Container(width: 50, height: 100, color: Colors.tealAccent),
+            flex: 2,
+          ),
+        ],
+      ),
 
       /*
       floatingActionButton: FloatingActionButton(
