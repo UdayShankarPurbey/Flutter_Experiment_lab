@@ -634,16 +634,21 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       // // TOPICS : CIRCLE AVATAR  :-
-      body: Center(
-        child: CircleAvatar(
-          child: Text("U", style: TextStyle(fontSize: 18)),
-          backgroundImage: AssetImage("assets/images/user-image-02.png"),
-          backgroundColor: Colors.greenAccent,
-          radius: 50,
-          // minRadius: 20,
-          // maxRadius: 100,
-        ),
-      ),
+      // body: Center(
+      //   child: CircleAvatar(
+      //     child: Text("U", style: TextStyle(fontSize: 18)),
+      //     backgroundImage: AssetImage("assets/images/user-image-02.png"),
+      //     backgroundColor: Colors.greenAccent,
+      //     radius: 50,
+      //     // minRadius: 20,
+      //     // maxRadius: 100,
+      //   ),
+      // ),
+
+
+      // // TOPICS : CUSTOM FONT  :-
+      body: Text("hello world" , style: TextStyle(fontFamily: 'Volkhov' , fontSize: 20)),
+
 
       /*
       floatingActionButton: FloatingActionButton(

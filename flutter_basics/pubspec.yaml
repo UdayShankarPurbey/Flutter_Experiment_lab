@@ -72,6 +72,14 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  fonts:
+    - family: Volkhov
+      fonts:
+        - asset: assets/fonts/Volkhov/Volkhov-Regular.ttf
+        - asset: assets/fonts/Volkhov/Volkhov-Italic.ttf
+        - asset: assets/fonts/Volkhov/Volkhov-Bold.ttf
+        - asset: assets/fonts/Volkhov/Volkhov-BoldItalic.ttf
+
   # fonts:
   #   - family: Schyler
   #     fonts:
