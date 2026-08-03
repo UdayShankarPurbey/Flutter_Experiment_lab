@@ -535,68 +535,83 @@ class _MyHomePageState extends State<MyHomePage> {
       // )
 
       // // TOPICS : EXPANDED WIDGET  :-
-      body: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Column(
+      // body: Row(
+      //   crossAxisAlignment: CrossAxisAlignment.start,
+      //   children: [
+      //     Column(
+      //       children: [
+      //         Expanded(
+      //           child: Container(width: 50, height: 100, color: Colors.blue),
+      //           flex: 3,
+      //         ),
+      //         Expanded(
+      //           child: Container(width: 50, height: 100, color: Colors.red),
+      //           flex: 1,
+      //         ),
+      //         Expanded(
+      //           child: Container(width: 50, height: 100, color: Colors.amber),
+      //           flex: 1,
+      //         ),
+      //         Expanded(
+      //           child: Container(width: 50, height: 100, color: Colors.green),
+      //           flex: 1,
+      //         ),
+      //         Expanded(
+      //           child: Container(width: 50, height: 100, color: Colors.pink),
+      //           flex: 1,
+      //         ),
+      //         Expanded(
+      //           child: Container(
+      //             width: 50,
+      //             height: 100,
+      //             color: Colors.tealAccent,
+      //           ),
+      //           flex: 3,
+      //         ),
+      //       ],
+      //     ),
+      //     Expanded(
+      //       child: Container(width: 50, height: 100, color: Colors.blue),
+      //       flex: 1,
+      //     ),
+      //     Expanded(
+      //       child: Container(width: 50, height: 100, color: Colors.red),
+      //       flex: 1,
+      //     ),
+      //     Expanded(
+      //       child: Container(width: 50, height: 100, color: Colors.amber),
+      //       flex: 1,
+      //     ),
+      //     Expanded(
+      //       child: Container(width: 50, height: 100, color: Colors.green),
+      //       flex: 1,
+      //     ),
+      //     Expanded(
+      //       child: Container(width: 50, height: 100, color: Colors.pink),
+      //       flex: 1,
+      //     ),
+      //     Expanded(
+      //       child: Container(width: 50, height: 100, color: Colors.tealAccent),
+      //       flex: 2,
+      //     ),
+      //   ],
+      // ),
 
-            children: [
-              Expanded(
-                child: Container(width: 50, height: 100, color: Colors.blue),
-                flex: 3,
-              ),
-              Expanded(
-                child: Container(width: 50, height: 100, color: Colors.red),
-                flex: 1,
-              ),
-              Expanded(
-                child: Container(width: 50, height: 100, color: Colors.amber),
-                flex: 1,
-              ),
-              Expanded(
-                child: Container(width: 50, height: 100, color: Colors.green),
-                flex: 1,
-              ),
-              Expanded(
-                child: Container(width: 50, height: 100, color: Colors.pink),
-                flex: 1,
-              ),
-              Expanded(
-                child: Container(
-                  width: 50,
-                  height: 100,
-                  color: Colors.tealAccent,
-                ),
-                flex: 3,
-              ),
-            ],
+      // // TOPICS : MARGIN & PADDING  :-
+      body: Padding(
+        // padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsetsGeometry.only(left: 10),
+        child: Container(
+          height: 50,
+          width: 200,
+          color: Colors.cyan,
+          margin: EdgeInsets.all(8.0), // provides space form outside
+          padding: EdgeInsets.all(8.0), // provides space form inside
+          child: Text(
+            "Hello World",
+            style: TextStyle(fontSize: 24, color: Colors.white),
           ),
-          
-          Expanded(
-            child: Container(width: 50, height: 100, color: Colors.blue),
-            flex: 1,
-          ),
-          Expanded(
-            child: Container(width: 50, height: 100, color: Colors.red),
-            flex: 1,
-          ),
-          Expanded(
-            child: Container(width: 50, height: 100, color: Colors.amber),
-            flex: 1,
-          ),
-          Expanded(
-            child: Container(width: 50, height: 100, color: Colors.green),
-            flex: 1,
-          ),
-          Expanded(
-            child: Container(width: 50, height: 100, color: Colors.pink),
-            flex: 1,
-          ),
-          Expanded(
-            child: Container(width: 50, height: 100, color: Colors.tealAccent),
-            flex: 2,
-          ),
-        ],
+        ),
       ),
 
       /*
