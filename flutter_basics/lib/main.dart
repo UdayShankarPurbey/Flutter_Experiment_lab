@@ -495,22 +495,45 @@ class _MyHomePageState extends State<MyHomePage> {
       //   // reverse: true,
       //   itemExtent: 100,
       //   scrollDirection: Axis.horizontal,
-
       // ),
 
-      // // TOPICS : LISTVIEW AND ITS COMPONENTS :-
-      //   // SUB-TOPIC : LISTVIEW SEPERATOR WIDGET :-
-      body : ListView.separated(
-        itemCount: user_name.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Text(user_name[index] , style: TextStyle(fontSize: 21 , fontWeight: FontWeight.w600));
-        },
-        separatorBuilder: (context, index) {
-          return Divider(height:4 , thickness: 4,);
-        },
+      // // // TOPICS : LISTVIEW AND ITS COMPONENTS :-
+      // //   // SUB-TOPIC : LISTVIEW SEPERATOR WIDGET :-
+      // body : ListView.separated(
+      //   itemCount: user_name.length,
+      //   itemBuilder: (BuildContext context, int index) {
+      //     return Text(user_name[index] , style: TextStyle(fontSize: 21 , fontWeight: FontWeight.w600));
+      //   },
+      //   separatorBuilder: (context, index) {
+      //     return Divider(height:4 , thickness: 4,);
+      //   },
+      // ),
 
-      ),
+      // // // TOPICS : BOX DECORATION  :-
+      body : Container(
+        width: double.infinity,
+        height: double.infinity,
+        color: Colors.blue.shade50,
+        child: Center(
+          child: Container(
+            width: 100,
+            height: 100,
+            decoration: BoxDecoration(
+              color: Colors.blueGrey,
+              // borderRadius: BorderRadius.circular(10)
+              // borderRadius: BorderRadius.only(topLeft: Radius.circular(20) , bottomRight: Radius.circular(20)),
+              border: Border.all(color: Colors.black54 , width: 2),
+              boxShadow: [BoxShadow(
+                color: const Color.fromARGB(66, 24, 23, 23),
+                blurRadius: 5,
+                spreadRadius: 7
+              )],
+              shape: BoxShape.circle
+            ),
 
+          ),
+        ),
+      )
 
 
       /*
