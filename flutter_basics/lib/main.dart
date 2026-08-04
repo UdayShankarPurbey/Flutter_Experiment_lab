@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basics/ui/font.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,6 +31,12 @@ class MyApp extends StatelessWidget {
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+
+        textTheme: TextTheme(
+          headlineLarge: TextStyle(fontWeight: FontWeight.w500, fontSize: 24),
+          headlineMedium: TextStyle(fontWeight: FontWeight.w500, fontSize: 12),
+          headlineSmall: TextStyle(fontWeight: FontWeight.w500, fontSize: 6),
+        ),
       ),
       home: const MyHomePage(title: 'Welcome to Experiment Lab'),
     );
@@ -645,10 +652,20 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
 
+      // // // TOPICS : CUSTOM FONT  :-
+      // body: Text("hello world" , style: TextStyle(fontFamily: 'Volkhov' , fontSize: 20)),
 
-      // // TOPICS : CUSTOM FONT  :-
-      body: Text("hello world" , style: TextStyle(fontFamily: 'Volkhov' , fontSize: 20)),
-
+      // // TOPICS : STYLES AND THEMES  :-
+      body: Column(
+        children: [
+          Text("Hello World", style: mTextStyleColor(Theme.of(context).textTheme.headlineLarge,Colors.orange)),
+          Text("Hello World", style: Theme.of(context).textTheme.headlineMedium),
+          Text("Hello World", style: Theme.of(context).textTheme.headlineSmall),
+          Text("Hello World", style: mTextStyleColor(Theme.of(context).textTheme.headlineLarge,Colors.green)),
+          Text("Hello World", style: Theme.of(context).textTheme.headlineMedium),
+          Text("Hello World", style: Theme.of(context).textTheme.headlineSmall),
+        ],
+      ),
 
       /*
       floatingActionButton: FloatingActionButton(
