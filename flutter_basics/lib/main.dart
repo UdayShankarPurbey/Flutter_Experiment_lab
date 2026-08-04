@@ -681,7 +681,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
 
-      // // TOPICS : CARD WIDGET :-
+      // // TOPICS : TEXT INPUT WIDGET :-
       body: Center(
         child: Container(
           child: Column(
@@ -720,7 +720,6 @@ class _MyHomePageState extends State<MyHomePage> {
               TextField(
                 keyboardType: TextInputType.phone,
                 controller: phoneText,
-
                 decoration: InputDecoration(
                   hint: Text("Enter Your Phone No"),
                   border: OutlineInputBorder(
@@ -746,14 +745,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 controller: passwordText,
                 obscureText: true,
                 obscuringCharacter: '*',
-
                 decoration: InputDecoration(
                   hint: Text("Enter Your Password"),
                   disabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                     borderSide: BorderSide(color: Colors.red, width: 2),
                   ),
-
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                     borderSide: BorderSide(color: Colors.amber, width: 2),
@@ -771,7 +768,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Container(height: 11),
-
               ElevatedButton(
                 onPressed: () {
                   print(
