@@ -786,29 +786,66 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
 
-      // // // TOPICS : GETTING CURRENT DATE & TIME :-
+      // // // // TOPICS : GETTING CURRENT DATE & TIME :-
+      // body: Center(
+      //   child: Container(
+      //     width: 500,
+      //     height: 200,
+      //     child: Column(
+      //       children: [
+      //         Text("Current Time : ${DateFormat('jms').format(time)}", style: TextStyle(fontSize: 24)),
+      //         ElevatedButton(
+      //           onPressed: () {
+      //             // print("time : ${time}");
+      //             // time = DateTime.now(); // it will change value but not reflect in ui
+      //             setState(() {
+      //                 time = DateTime.now();
+      //             });
+      //           },
+      //           child: Text("Current Time"),
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
+
+      // // // TOPICS : DATE PICKER :-
       body: Center(
         child: Container(
-          width: 500,
           height: 200,
           child: Column(
             children: [
-              Text("Current Time : ${DateFormat('jms').format(time)}", style: TextStyle(fontSize: 24)),
+              Text("Select Date ", style: TextStyle(fontSize: 24)),
               ElevatedButton(
-                onPressed: () {
-                  // print("time : ${time}");
-                  // time = DateTime.now(); // it will change value but not reflect in ui 
-                  setState(() {
-                      time = DateTime.now();
-                  });
+                onPressed: () async {
+                  DateTime? datePicked = await showDatePicker(
+                    context: context,
+                    firstDate: DateTime(1990),
+                    lastDate: DateTime.now(),
+                  );
+                  if (datePicked != null) {
+                    print(datePicked);
+                  }
                 },
-                child: Text("Current Time"),
+                child: Text("Show Date"),
+              ),
+              ElevatedButton(
+                onPressed: () async {
+                  TimeOfDay? timePicked = await showTimePicker(
+                    context: context,
+                    initialTime: TimeOfDay.now(),
+                    initialEntryMode: TimePickerEntryMode.input
+                  );
+                  if (timePicked != null) {
+                    print(timePicked);
+                  }
+                },
+                child: Text("Show Time"),
               ),
             ],
           ),
         ),
       ),
-
 
       /*
       floatingActionButton: FloatingActionButton(
