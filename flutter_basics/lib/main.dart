@@ -655,17 +655,41 @@ class _MyHomePageState extends State<MyHomePage> {
       // // // TOPICS : CUSTOM FONT  :-
       // body: Text("hello world" , style: TextStyle(fontFamily: 'Volkhov' , fontSize: 20)),
 
-      // // TOPICS : STYLES AND THEMES  :-
-      body: Column(
-        children: [
-          Text("Hello World", style: mTextStyleColor(Theme.of(context).textTheme.headlineLarge,Colors.orange)),
-          Text("Hello World", style: Theme.of(context).textTheme.headlineMedium),
-          Text("Hello World", style: Theme.of(context).textTheme.headlineSmall),
-          Text("Hello World", style: mTextStyleColor(Theme.of(context).textTheme.headlineLarge,Colors.green)),
-          Text("Hello World", style: Theme.of(context).textTheme.headlineMedium),
-          Text("Hello World", style: Theme.of(context).textTheme.headlineSmall),
-        ],
+      // // // TOPICS : STYLES AND THEMES  :-
+      // body: Column(
+      //   children: [
+      //     Text("Hello World", style: mTextStyleColor(Theme.of(context).textTheme.headlineLarge,Colors.orange)),
+      //     Text("Hello World", style: Theme.of(context).textTheme.headlineMedium),
+      //     Text("Hello World", style: Theme.of(context).textTheme.headlineSmall),
+      //     Text("Hello World", style: mTextStyleColor(Theme.of(context).textTheme.headlineLarge,Colors.green)),
+      //     Text("Hello World", style: Theme.of(context).textTheme.headlineMedium),
+      //     Text("Hello World", style: Theme.of(context).textTheme.headlineSmall),
+      //   ],
+      // ),
+
+      // // TOPICS : CARD WIDGET :-
+      body: Center(
+        child: Card(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("Hello World", style: TextStyle(fontSize: 24),),
+          ),
+        ),
       ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       /*
       floatingActionButton: FloatingActionButton(
