@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basics/ui/font.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(const MyApp());
@@ -792,10 +793,10 @@ class _MyHomePageState extends State<MyHomePage> {
           height: 200,
           child: Column(
             children: [
-              Text("Current Time : ${time}", style: TextStyle(fontSize: 24)),
+              Text("Current Time : ${DateFormat('jms').format(time)}", style: TextStyle(fontSize: 24)),
               ElevatedButton(
                 onPressed: () {
-                  print("time : ${time}");
+                  // print("time : ${time}");
                   // time = DateTime.now(); // it will change value but not reflect in ui 
                   setState(() {
                       time = DateTime.now();
@@ -807,6 +808,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
+
 
       /*
       floatingActionButton: FloatingActionButton(
