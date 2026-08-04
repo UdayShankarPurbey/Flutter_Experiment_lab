@@ -81,6 +81,8 @@ class _MyHomePageState extends State<MyHomePage> {
   var passwordText = TextEditingController();
   var phoneText = TextEditingController();
 
+  var time = DateTime.now();
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -681,105 +683,128 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
 
-      // // TOPICS : TEXT INPUT WIDGET :-
+      // // // TOPICS : TEXT INPUT WIDGET :-
+      // body: Center(
+      //   child: Container(
+      //     child: Column(
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       children: [
+      //         TextField(
+      //           controller: emailText,
+      //           keyboardType: TextInputType.emailAddress,
+      //           // enabled: false,
+      //           decoration: InputDecoration(
+      //             hint: Text("Enter Your Email"),
+      //             enabledBorder: OutlineInputBorder(
+      //               borderSide: BorderSide(color: Colors.amber, width: 2),
+      //               // borderRadius: BorderRadius.circular(21)
+      //               borderRadius: BorderRadius.all(Radius.circular(20)),
+      //             ),
+      //             focusedBorder: OutlineInputBorder(
+      //               borderSide: BorderSide(color: Colors.cyan, width: 2),
+      //               // borderRadius: BorderRadius.circular(21)
+      //               borderRadius: BorderRadius.all(Radius.circular(20)),
+      //             ),
+      //             disabledBorder: OutlineInputBorder(
+      //               borderSide: BorderSide(color: Colors.red, width: 2),
+      //               // borderRadius: BorderRadius.circular(21)
+      //               borderRadius: BorderRadius.all(Radius.circular(20)),
+      //             ),
+      //             // suffixText: "hi",
+      //             // suffixIcon: IconButton(
+      //             //   onPressed: () {},
+      //             //   icon: Icon(Icons.remove_red_eye, color: Colors.red),
+      //             // ),
+      //             prefixIcon: Icon(Icons.email),
+      //           ),
+      //         ),
+      //         Container(height: 11),
+      //         TextField(
+      //           keyboardType: TextInputType.phone,
+      //           controller: phoneText,
+      //           decoration: InputDecoration(
+      //             hint: Text("Enter Your Phone No"),
+      //             border: OutlineInputBorder(
+      //               borderRadius: BorderRadius.circular(20),
+      //             ),
+      //             prefixIcon: Icon(Icons.call),
+      //             disabledBorder: OutlineInputBorder(
+      //               borderRadius: BorderRadius.circular(20),
+      //               borderSide: BorderSide(color: Colors.red, width: 2),
+      //             ),
+      //             enabledBorder: OutlineInputBorder(
+      //               borderRadius: BorderRadius.circular(20),
+      //               borderSide: BorderSide(color: Colors.amber, width: 2),
+      //             ),
+      //             focusedBorder: OutlineInputBorder(
+      //               borderRadius: BorderRadius.circular(20),
+      //               borderSide: BorderSide(color: Colors.cyan, width: 2),
+      //             ),
+      //           ),
+      //         ),
+      //         Container(height: 11),
+      //         TextField(
+      //           controller: passwordText,
+      //           obscureText: true,
+      //           obscuringCharacter: '*',
+      //           decoration: InputDecoration(
+      //             hint: Text("Enter Your Password"),
+      //             disabledBorder: OutlineInputBorder(
+      //               borderRadius: BorderRadius.all(Radius.circular(20)),
+      //               borderSide: BorderSide(color: Colors.red, width: 2),
+      //             ),
+      //             enabledBorder: OutlineInputBorder(
+      //               borderRadius: BorderRadius.all(Radius.circular(20)),
+      //               borderSide: BorderSide(color: Colors.amber, width: 2),
+      //             ),
+      //             focusedBorder: OutlineInputBorder(
+      //               borderRadius: BorderRadius.circular(20),
+      //               borderSide: BorderSide(color: Colors.cyan, width: 2),
+      //             ),
+      //             prefixIcon: Icon(Icons.lock),
+      //             suffixIcon: IconButton(
+      //               onPressed: () {},
+      //               icon: Icon(Icons.remove_red_eye),
+      //               color: Colors.red,
+      //             ),
+      //           ),
+      //         ),
+      //         Container(height: 11),
+      //         ElevatedButton(
+      //           onPressed: () {
+      //             print(
+      //               "Email : ${emailText.text.toString()} , Mobile : ${phoneText.text.toString()} and Password : ${passwordText.text.toString()} ",
+      //             );
+      //           },
+      //           style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+      //           child: Text("Login" , style: TextStyle(color: Colors.white),),
+      //         ),
+      //       ],
+      //     ),
+      //     width: 200,
+      //   ),
+      // ),
+
+      // // // TOPICS : GETTING CURRENT DATE & TIME :-
       body: Center(
         child: Container(
+          width: 500,
+          height: 200,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextField(
-                controller: emailText,
-                keyboardType: TextInputType.emailAddress,
-                // enabled: false,
-                decoration: InputDecoration(
-                  hint: Text("Enter Your Email"),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.amber, width: 2),
-                    // borderRadius: BorderRadius.circular(21)
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.cyan, width: 2),
-                    // borderRadius: BorderRadius.circular(21)
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                  ),
-                  disabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red, width: 2),
-                    // borderRadius: BorderRadius.circular(21)
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                  ),
-                  // suffixText: "hi",
-                  // suffixIcon: IconButton(
-                  //   onPressed: () {},
-                  //   icon: Icon(Icons.remove_red_eye, color: Colors.red),
-                  // ),
-                  prefixIcon: Icon(Icons.email),
-                ),
-              ),
-              Container(height: 11),
-              TextField(
-                keyboardType: TextInputType.phone,
-                controller: phoneText,
-                decoration: InputDecoration(
-                  hint: Text("Enter Your Phone No"),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  prefixIcon: Icon(Icons.call),
-                  disabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                    borderSide: BorderSide(color: Colors.red, width: 2),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                    borderSide: BorderSide(color: Colors.amber, width: 2),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                    borderSide: BorderSide(color: Colors.cyan, width: 2),
-                  ),
-                ),
-              ),
-              Container(height: 11),
-              TextField(
-                controller: passwordText,
-                obscureText: true,
-                obscuringCharacter: '*',
-                decoration: InputDecoration(
-                  hint: Text("Enter Your Password"),
-                  disabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                    borderSide: BorderSide(color: Colors.red, width: 2),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                    borderSide: BorderSide(color: Colors.amber, width: 2),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                    borderSide: BorderSide(color: Colors.cyan, width: 2),
-                  ),
-                  prefixIcon: Icon(Icons.lock),
-                  suffixIcon: IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.remove_red_eye),
-                    color: Colors.red,
-                  ),
-                ),
-              ),
-              Container(height: 11),
+              Text("Current Time : ${time}", style: TextStyle(fontSize: 24)),
               ElevatedButton(
                 onPressed: () {
-                  print(
-                    "Email : ${emailText.text.toString()} , Mobile : ${phoneText.text.toString()} and Password : ${passwordText.text.toString()} ",
-                  );
+                  print("time : ${time}");
+                  // time = DateTime.now(); // it will change value but not reflect in ui 
+                  setState(() {
+                      time = DateTime.now();
+                  });
                 },
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-                child: Text("Login" , style: TextStyle(color: Colors.white),),
+                child: Text("Current Time"),
               ),
             ],
           ),
-          width: 200,
         ),
       ),
 
