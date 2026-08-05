@@ -920,9 +920,30 @@ class _MyHomePageState extends State<MyHomePage> {
       // body: ElevatedButton(onPressed: buttonPress, child: Text("Click Me!")),
 
       // // // // TOPICS : CUSTOM WIDGET :-
-      body: Column(
-        children: [CatItems(), Contact(), SubCartItem(), BottomMenu()],
+      // body: Column(
+      //   children: [CatItems(), Contact(), SubCartItem(), BottomMenu()],
+      // ),
+
+      // // // // TOPICS : STACK WIDGET :-
+      body: Stack(
+        children: [
+          Container(width: 200, height: 200, color: Colors.blue),
+          Container(width: 180, height: 180, color: Colors.green),
+          Container(width: 160, height: 160, color: Colors.red),
+          Container(width: 140, height: 140, color: Colors.yellow),
+          Positioned(
+            left: 20,
+            top: 20,
+            child: Container(width: 120, height: 120, color: Colors.deepPurpleAccent),
+          ),
+          Positioned(
+            left: 40,
+            top: 40,
+            child: Container(width: 100, height: 100, color: Colors.tealAccent),
+          ),
+        ],
       ),
+
       /*
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
