@@ -94,6 +94,10 @@ class _MyHomePageState extends State<MyHomePage> {
     Colors.purpleAccent,
   ];
 
+  buttonPress() {
+        print("Button Clicked");
+      }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -901,16 +905,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
       // // // // TOPICS : GRID VIEW :-
       // // // // SUB TOPIC : GRIDVIEW BUILDER -
-      body: GridView.builder(
-        // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        //   crossAxisCount: 3,
-        // ),
-         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 150),
-        itemBuilder: (context, index) {
-          return Container(color: colorList[index]);
-        },
-        itemCount: colorList.length,
-      ),
+      // body: GridView.builder(
+      //   // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      //   //   crossAxisCount: 3,
+      //   // ),
+      //    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 150),
+      //   itemBuilder: (context, index) {
+      //     return Container(color: colorList[index]);
+      //   },
+      //   itemCount: colorList.length,
+      // ),
+
+      // // // // TOPICS : CALLBACK FUNCTION :-
+      body: ElevatedButton(onPressed: buttonPress, child: Text("Click Me!")),
+
 
       /*
       floatingActionButton: FloatingActionButton(
