@@ -84,6 +84,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
   var time = DateTime.now();
 
+  var colorList = [
+    Colors.amber,
+    Colors.red,
+    Colors.blue,
+    Colors.green,
+    Colors.grey,
+    Colors.lime,
+    Colors.purpleAccent,
+  ];
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -809,42 +819,97 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
 
-      // // // TOPICS : DATE PICKER :-
-      body: Center(
-        child: Container(
-          height: 200,
-          child: Column(
-            children: [
-              Text("Select Date ", style: TextStyle(fontSize: 24)),
-              ElevatedButton(
-                onPressed: () async {
-                  DateTime? datePicked = await showDatePicker(
-                    context: context,
-                    firstDate: DateTime(1990),
-                    lastDate: DateTime.now(),
-                  );
-                  if (datePicked != null) {
-                    print(datePicked);
-                  }
-                },
-                child: Text("Show Date"),
-              ),
-              ElevatedButton(
-                onPressed: () async {
-                  TimeOfDay? timePicked = await showTimePicker(
-                    context: context,
-                    initialTime: TimeOfDay.now(),
-                    initialEntryMode: TimePickerEntryMode.input
-                  );
-                  if (timePicked != null) {
-                    print(timePicked);
-                  }
-                },
-                child: Text("Show Time"),
-              ),
-            ],
-          ),
-        ),
+      // // // // TOPICS : DATE PICKER :-
+      // body: Center(
+      //   child: Container(
+      //     height: 200,
+      //     child: Column(
+      //       children: [
+      //         Text("Select Date ", style: TextStyle(fontSize: 24)),
+      //         ElevatedButton(
+      //           onPressed: () async {
+      //             DateTime? datePicked = await showDatePicker(
+      //               context: context,
+      //               firstDate: DateTime(1990),
+      //               lastDate: DateTime.now(),
+      //             );
+      //             if (datePicked != null) {
+      //               print(datePicked);
+      //             }
+      //           },
+      //           child: Text("Show Date"),
+      //         ),
+      //         ElevatedButton(
+      //           onPressed: () async {
+      //             TimeOfDay? timePicked = await showTimePicker(
+      //               context: context,
+      //               initialTime: TimeOfDay.now(),
+      //               initialEntryMode: TimePickerEntryMode.input
+      //             );
+      //             if (timePicked != null) {
+      //               print(timePicked);
+      //             }
+      //           },
+      //           child: Text("Show Time"),
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
+
+      // // // TOPICS : GRID VIEW :-
+      // // // SUB TOPIC : GRIDVIEW COUNT -
+      // body: Container(
+      //   width: 200,
+      //   height: 200,
+      //   child: Padding(
+      //     padding: const EdgeInsets.all(8.0),
+      //     child: GridView.count(
+      //       crossAxisSpacing: 8,
+      //       mainAxisSpacing: 8,
+      //       crossAxisCount: 3,
+      //       children: <Widget>[
+      //         for (var i = 0; i < colorList.length; i++)
+      //           Container(
+      //             color: colorList[i],
+      //             child: Center(
+      //               child: Text("${i}", style: TextStyle(color: Colors.white)),
+      //             ),
+      //           ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
+
+      // // // // TOPICS : GRID VIEW :-
+      // // // // SUB TOPIC : GRIDVIEW EXTENT -
+      // body: Container(
+      //   height: 400,
+      //   child: GridView.extent(
+      //     maxCrossAxisExtent: 200,
+      //     children: <Widget>[
+      //       for (var i = 0; i < colorList.length; i++)
+      //         Container(
+      //           color: colorList[i],
+      //           child: Center(
+      //             child: Text("${i}", style: TextStyle(color: Colors.white)),
+      //           ),
+      //         ),
+      //     ],
+      //   ),
+      // ),
+
+      // // // // TOPICS : GRID VIEW :-
+      // // // // SUB TOPIC : GRIDVIEW BUILDER -
+      body: GridView.builder(
+        // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        //   crossAxisCount: 3,
+        // ),
+         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 150),
+        itemBuilder: (context, index) {
+          return Container(color: colorList[index]);
+        },
+        itemCount: colorList.length,
       ),
 
       /*
