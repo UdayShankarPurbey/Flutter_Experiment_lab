@@ -95,8 +95,8 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
 
   buttonPress() {
-        print("Button Clicked");
-      }
+    print("Button Clicked");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -917,9 +917,12 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       // // // // TOPICS : CALLBACK FUNCTION :-
-      body: ElevatedButton(onPressed: buttonPress, child: Text("Click Me!")),
+      // body: ElevatedButton(onPressed: buttonPress, child: Text("Click Me!")),
 
-
+      // // // // TOPICS : CUSTOM WIDGET :-
+      body: Column(
+        children: [CatItems(), Contact(), SubCartItem(), BottomMenu()],
+      ),
       /*
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
@@ -927,6 +930,135 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.add),
       ),
       */
+    );
+  }
+}
+
+class CatItems extends StatelessWidget {
+  const CatItems({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: 1,
+      child: Container(
+        color: Colors.blue,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: 10,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: CircleAvatar(
+                backgroundColor: Colors.green,
+                child: Center(child: Text("${index + 1}")),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class Contact extends StatelessWidget {
+  const Contact({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: 6,
+      child: Container(
+        color: Colors.orange,
+        child: ListView.builder(
+          itemCount: 10,
+          itemBuilder: (BuildContext context, int index) {
+            return ListTile(
+              title: Text("User - ${index + 1}"),
+              subtitle: Text("Mobile No : +91-xxxxxxxxxx"),
+              leading: CircleAvatar(backgroundColor: Colors.green),
+              trailing: Icon(Icons.delete),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class SubCartItem extends StatelessWidget {
+  const SubCartItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Row(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+              color: Colors.grey,
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: ListView.builder(
+                  itemCount: 10,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Container(
+                        width: 100,
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
+                    );
+                  },
+                  scrollDirection: Axis.horizontal,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class BottomMenu extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Row(
+        children: [
+          Expanded(
+            flex: 2,
+            child: Container(
+              color: Colors.green,
+              height: 80,
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: ListView.builder(
+                  itemCount: 10,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Container(
+                        width: 50,
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
+                    );
+                  },
+                  scrollDirection: Axis.horizontal,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
