@@ -976,24 +976,42 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       // // // // TOPICS : WRAP WIDGET :-
-      body: Container(
-        width:double.infinity,
-        child: Wrap(
-          direction: Axis.horizontal,
-          spacing: 10,
-          runSpacing: 10,
-          alignment: WrapAlignment.center,
-          children: [
-            Container(width: 100, height: 100, color: Colors.red),
-            Container(width: 100, height: 100, color: Colors.teal),
-            Container(width: 100, height: 100, color: Colors.yellow),
-            Container(width: 100, height: 100, color: Colors.deepPurpleAccent),
-            Container(width: 100, height: 100, color: Colors.lightGreenAccent),
-            Container(width: 100, height: 100, color: Colors.grey),
-            Container(width: 100, height: 100, color: Colors.brown),
-          ],
-        ),
+      // body: Container(
+      //   width:double.infinity,
+      //   child: Wrap(
+      //     direction: Axis.horizontal,
+      //     spacing: 10,
+      //     runSpacing: 10,
+      //     alignment: WrapAlignment.center,
+      //     children: [
+      //       Container(width: 100, height: 100, color: Colors.red),
+      //       Container(width: 100, height: 100, color: Colors.teal),
+      //       Container(width: 100, height: 100, color: Colors.yellow),
+      //       Container(width: 100, height: 100, color: Colors.deepPurpleAccent),
+      //       Container(width: 100, height: 100, color: Colors.lightGreenAccent),
+      //       Container(width: 100, height: 100, color: Colors.grey),
+      //       Container(width: 100, height: 100, color: Colors.brown),
+      //     ],
+      //   ),
+      // ),
+
+      // // // // TOPICS : SIZEBOX WIDGET :-
+      body: Row(
+        children: [
+          SizedBox(
+            width :100,
+            height: 50,
+            child: ElevatedButton(onPressed: () {}, child: Text("Button"))
+          ),
+          SizedBox(width: 10,),
+           SizedBox(
+            width :100,
+            height: 50,
+            child: ElevatedButton(onPressed: () {}, child: Text("Button"))
+          ),
+        ],
       ),
+
 
       /*
       floatingActionButton: FloatingActionButton(
