@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basics/ui/font.dart';
+import 'package:flutter_basics/widgets/roundedBtn.dart';
 import 'package:intl/intl.dart';
 
 void main() {
@@ -925,23 +926,55 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       // // // // TOPICS : STACK WIDGET :-
-      body: Stack(
-        children: [
-          Container(width: 200, height: 200, color: Colors.blue),
-          Container(width: 180, height: 180, color: Colors.green),
-          Container(width: 160, height: 160, color: Colors.red),
-          Container(width: 140, height: 140, color: Colors.yellow),
-          Positioned(
-            left: 20,
-            top: 20,
-            child: Container(width: 120, height: 120, color: Colors.deepPurpleAccent),
-          ),
-          Positioned(
-            left: 40,
-            top: 40,
-            child: Container(width: 100, height: 100, color: Colors.tealAccent),
-          ),
-        ],
+      // body: Stack(
+      //   children: [
+      //     Container(width: 200, height: 200, color: Colors.blue),
+      //     Container(width: 180, height: 180, color: Colors.green),
+      //     Container(width: 160, height: 160, color: Colors.red),
+      //     Container(width: 140, height: 140, color: Colors.yellow),
+      //     Positioned(
+      //       left: 20,
+      //       top: 20,
+      //       child: Container(width: 120, height: 120, color: Colors.deepPurpleAccent),
+      //     ),
+      //     Positioned(
+      //       left: 40,
+      //       top: 40,
+      //       child: Container(width: 100, height: 100, color: Colors.tealAccent),
+      //     ),
+      //   ],
+      // ),
+
+      // // // // TOPICS : CUSTOM WIDGET :-
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 200,
+              height: 50,
+              child: RoundedButton(
+                btnName: "Play Now!!",
+                icon: Icon(Icons.play_arrow),
+                callBack: () => print("Play Button Clicked!"),
+                bgColor: Colors.red,
+                textStyle: TextStyle(color : Colors.yellow),
+                
+              ),
+            ),
+            Container(height: 15,),
+            Container(
+              width: 200,
+              height: 50,
+              child: RoundedButton(
+                btnName: "Click Me!",
+                icon: Icon(Icons.lock),
+                callBack: () => print("Button Clicked!"),
+                
+              ),
+            ),
+          ],
+        ),
       ),
 
       /*
