@@ -946,33 +946,51 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       // // // // TOPICS : CUSTOM WIDGET :-
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      // body: Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       Container(
+      //         width: 200,
+      //         height: 50,
+      //         child: RoundedButton(
+      //           btnName: "Play Now!!",
+      //           icon: Icon(Icons.play_arrow),
+      //           callBack: () => print("Play Button Clicked!"),
+      //           bgColor: Colors.red,
+      //           textStyle: TextStyle(color : Colors.yellow),
+      //         ),
+      //       ),
+      //       Container(height: 15,),
+      //       Container(
+      //         width: 200,
+      //         height: 50,
+      //         child: RoundedButton(
+      //           btnName: "Click Me!",
+      //           icon: Icon(Icons.lock),
+      //           callBack: () => print("Button Clicked!"),
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
+
+      // // // // TOPICS : WRAP WIDGET :-
+      body: Container(
+        width:double.infinity,
+        child: Wrap(
+          direction: Axis.horizontal,
+          spacing: 10,
+          runSpacing: 10,
+          alignment: WrapAlignment.center,
           children: [
-            Container(
-              width: 200,
-              height: 50,
-              child: RoundedButton(
-                btnName: "Play Now!!",
-                icon: Icon(Icons.play_arrow),
-                callBack: () => print("Play Button Clicked!"),
-                bgColor: Colors.red,
-                textStyle: TextStyle(color : Colors.yellow),
-                
-              ),
-            ),
-            Container(height: 15,),
-            Container(
-              width: 200,
-              height: 50,
-              child: RoundedButton(
-                btnName: "Click Me!",
-                icon: Icon(Icons.lock),
-                callBack: () => print("Button Clicked!"),
-                
-              ),
-            ),
+            Container(width: 100, height: 100, color: Colors.red),
+            Container(width: 100, height: 100, color: Colors.teal),
+            Container(width: 100, height: 100, color: Colors.yellow),
+            Container(width: 100, height: 100, color: Colors.deepPurpleAccent),
+            Container(width: 100, height: 100, color: Colors.lightGreenAccent),
+            Container(width: 100, height: 100, color: Colors.grey),
+            Container(width: 100, height: 100, color: Colors.brown),
           ],
         ),
       ),
