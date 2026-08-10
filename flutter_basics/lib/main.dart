@@ -996,22 +996,33 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       // // // // TOPICS : SIZEBOX WIDGET :-
-      body: Row(
-        children: [
-          SizedBox(
-            width :100,
-            height: 50,
-            child: ElevatedButton(onPressed: () {}, child: Text("Button"))
-          ),
-          SizedBox(width: 10,),
-           SizedBox(
-            width :100,
-            height: 50,
-            child: ElevatedButton(onPressed: () {}, child: Text("Button"))
-          ),
-        ],
-      ),
+      // body: Row(
+      //   children: [
+      //     SizedBox(
+      //       width :100,
+      //       height: 50,
+      //       child: ElevatedButton(onPressed: () {}, child: Text("Button"))
+      //     ),
+      //     SizedBox(width: 10,),
+      //      SizedBox(
+      //       width :100,
+      //       height: 50,
+      //       child: ElevatedButton(onPressed: () {}, child: Text("Button"))
+      //     ),
+      //   ],
+      // ),
 
+      // // // // TOPICS : RICH TEXT WIDGET :-
+      body: RichText(
+        text: TextSpan(
+          style: TextStyle(color: Colors.grey, fontSize: 14),
+          children: [
+            TextSpan(text: "Hello "),
+            TextSpan(text: "World " , style : TextStyle(color: Colors.red, fontSize: 20)),
+            TextSpan(text: "Uday!!!!",style : TextStyle(fontFamily: "Volkhov" , fontSize: 30)),
+          ],
+        ),
+      ),
 
       /*
       floatingActionButton: FloatingActionButton(
