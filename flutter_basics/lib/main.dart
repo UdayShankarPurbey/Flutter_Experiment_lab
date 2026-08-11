@@ -1013,16 +1013,19 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       // // // // TOPICS : RICH TEXT WIDGET :-
-      body: RichText(
-        text: TextSpan(
-          style: TextStyle(color: Colors.grey, fontSize: 14),
-          children: [
-            TextSpan(text: "Hello "),
-            TextSpan(text: "World " , style : TextStyle(color: Colors.red, fontSize: 20)),
-            TextSpan(text: "Uday!!!!",style : TextStyle(fontFamily: "Volkhov" , fontSize: 30)),
-          ],
-        ),
-      ),
+      // body: RichText(
+      //   text: TextSpan(
+      //     style: TextStyle(color: Colors.grey, fontSize: 14),
+      //     children: [
+      //       TextSpan(text: "Hello "),
+      //       TextSpan(text: "World " , style : TextStyle(color: Colors.red, fontSize: 20)),
+      //       TextSpan(text: "Uday!!!!",style : TextStyle(fontFamily: "Volkhov" , fontSize: 30)),
+      //     ],
+      //   ),
+      // ),
+
+      // // // // // TOPICS : ICON WIDGET :-
+      // body: Icon(Icons.camera_outdoor_outlined , color: Colors.teal,),
 
       /*
       floatingActionButton: FloatingActionButton(
