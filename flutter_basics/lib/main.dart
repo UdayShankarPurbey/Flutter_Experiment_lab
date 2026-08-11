@@ -41,7 +41,8 @@ class MyApp extends StatelessWidget {
           headlineSmall: TextStyle(fontWeight: FontWeight.w500, fontSize: 6),
         ),
       ),
-      home: const MyHomePage(title: 'Welcome to Experiment Lab'),
+      // home: const MyHomePage(title: 'Welcome to Experiment Lab'),
+      home: HomePage(),
     );
   }
 }
@@ -1027,30 +1028,32 @@ class _MyHomePageState extends State<MyHomePage> {
 
       // // // // // TOPICS : ICON WIDGET :-
       // body: Icon(Icons.camera_outdoor_outlined , color: Colors.teal,),
-      
+
       // // // // TOPICS : AWASOME ICON WIDGET :-
       // body : FaIcon(FontAwesomeIcons.amazon , color: Colors.teal,)
 
       // // // // TOPICS : POSITIONED WIDGET :-
-      body: Container(
-        height: 500,
-        width: 200,
-        color: Colors.indigo,
-        child: Stack(
-          children: [
-            Positioned(
-              bottom: 10,
-              right: 50,
-              child: Container(
-                height: 200,
-                width : 100,
-                color: Colors.red,
-              ),
-            )
-          ]
-        ),
-      ),
+      // body: Container(
+      //   height: 500,
+      //   width: 200,
+      //   color: Colors.indigo,
+      //   child: Stack(
+      //     children: [
+      //       Positioned(
+      //         bottom: 10,
+      //         right: 50,
+      //         child: Container(
+      //           height: 200,
+      //           width : 100,
+      //           color: Colors.red,
+      //         ),
+      //       )
+      //     ]
+      //   ),
+      // ),
 
+      // // // // TOPICS : STATEFUL & STATELESS WIDGET :-
+      body: Container(),
 
       /*
       floatingActionButton: FloatingActionButton(
@@ -1187,6 +1190,60 @@ class BottomMenu extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  var count = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Flutter Experiment Lab 😊"),
+        backgroundColor: Colors.cyanAccent,
+      ),
+      body: Center(
+        child: Container(
+          height: 300,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Counter : $count"),
+              SizedBox(height: 10),
+              Container(
+                width: 170,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      count++;
+                    });
+                  },
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.white,
+                    backgroundColor: Colors.blue,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.add),
+                      SizedBox(width: 10),
+                      Text("Increse count"),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
