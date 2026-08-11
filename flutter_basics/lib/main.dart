@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basics/ui/font.dart';
 import 'package:flutter_basics/widgets/roundedBtn.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 
 void main() {
@@ -1026,6 +1027,30 @@ class _MyHomePageState extends State<MyHomePage> {
 
       // // // // // TOPICS : ICON WIDGET :-
       // body: Icon(Icons.camera_outdoor_outlined , color: Colors.teal,),
+      
+      // // // // TOPICS : AWASOME ICON WIDGET :-
+      // body : FaIcon(FontAwesomeIcons.amazon , color: Colors.teal,)
+
+      // // // // TOPICS : POSITIONED WIDGET :-
+      body: Container(
+        height: 500,
+        width: 200,
+        color: Colors.indigo,
+        child: Stack(
+          children: [
+            Positioned(
+              bottom: 10,
+              right: 50,
+              child: Container(
+                height: 200,
+                width : 100,
+                color: Colors.red,
+              ),
+            )
+          ]
+        ),
+      ),
+
 
       /*
       floatingActionButton: FloatingActionButton(
