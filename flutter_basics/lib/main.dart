@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basics/IntroPage.dart';
+import 'package:flutter_basics/splashScreen.dart';
 import 'package:flutter_basics/ui/font.dart';
 import 'package:flutter_basics/widgets/roundedBtn.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -44,7 +45,8 @@ class MyApp extends StatelessWidget {
       ),
       // home: const MyHomePage(title: 'Welcome to Experiment Lab'),
       // home: HomePage(),
-      home: const Intropage(),
+      // home: const Intropage(),
+      home : SplashScreen()
     );
   }
 }
@@ -1218,7 +1220,10 @@ class _MyHomePageState extends State<MyHomePage> {
       //   constraints: BoxConstraints(maxWidth: 100, maxHeight: 200),
       // ),
 
-      // // // // TOPICS : SWITCHING FROM ONE SCREEN TO ANOTHER SCREEN :-
+      // // // // // TOPICS : SWITCHING FROM ONE SCREEN TO ANOTHER SCREEN :-
+      // body: Center(child: Container(child: Text("Welcome to Home Page"))),
+
+      // // // // TOPICS : SPLASH SCREEN :-
       body: Center(child: Container(child: Text("Welcome to Home Page"))),
 
       /*
