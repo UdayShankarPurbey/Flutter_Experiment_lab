@@ -104,6 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
   var firstValueController = TextEditingController();
   var secondValueController = TextEditingController();
   var resultController = TextEditingController();
+  var resultValue;
 
   calculation(operation) {
     double result = 0;
@@ -118,6 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     if (firstValue == null || secondValue == null) {
       resultController.text = "Please Enter Valid Number";
+      resultValue = "Please Enter Valid Number";
       return;
     }
 
@@ -144,6 +146,10 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     resultController.text = result.toStringAsFixed(2);
+    // resultValue= result.toStringAsFixed(2); // this works  but not show in ui 
+    setState(() {
+      resultValue= result.toStringAsFixed(2);
+    });
   }
 
   @override
@@ -1100,7 +1106,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // // // // TOPICS :
       body: Center(
         child: Container(
-          height: 300,
+          height: 350,
 
           child: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -1193,6 +1199,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     decoration: InputDecoration(border: OutlineInputBorder()),
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("result is : ${resultValue}"),
+                )
               ],
             ),
           ),
