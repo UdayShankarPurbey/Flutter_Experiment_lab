@@ -41,8 +41,8 @@ class MyApp extends StatelessWidget {
           headlineSmall: TextStyle(fontWeight: FontWeight.w500, fontSize: 6),
         ),
       ),
-      // home: const MyHomePage(title: 'Welcome to Experiment Lab'),
-      home: HomePage(),
+      home: const MyHomePage(title: 'Welcome to Experiment Lab'),
+      // home: HomePage(),
     );
   }
 }
@@ -99,6 +99,51 @@ class _MyHomePageState extends State<MyHomePage> {
 
   buttonPress() {
     print("Button Clicked");
+  }
+
+  var firstValueController = TextEditingController();
+  var secondValueController = TextEditingController();
+  var resultController = TextEditingController();
+
+  calculation(operation) {
+    double result = 0;
+
+    final double? firstValue = double.tryParse(
+      firstValueController.text.toString(),
+    );
+
+    final double? secondValue = double.tryParse(
+      secondValueController.text.toString(),
+    );
+
+    if (firstValue == null || secondValue == null) {
+      resultController.text = "Please Enter Valid Number";
+      return;
+    }
+
+    switch (operation) {
+      case "+":
+        result = firstValue + secondValue;
+        break;
+
+      case "-":
+        result = firstValue - secondValue;
+        break;
+
+      case "*":
+        result = firstValue * secondValue;
+        break;
+
+      case "/":
+        if (secondValue == 0) {
+          resultController.text = "Please Enter Valid Number";
+          return;
+        }
+        result = firstValue / secondValue;
+        break;
+    }
+
+    resultController.text = result.toStringAsFixed(2);
   }
 
   @override
@@ -1052,8 +1097,107 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
 
-      // // // // TOPICS : STATEFUL & STATELESS WIDGET :-
-      body: Container(),
+      // // // // TOPICS :
+      body: Center(
+        child: Container(
+          height: 300,
+
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    controller: firstValueController,
+                    decoration: InputDecoration(
+                      labelText: "Enter First Value",
+                      border: OutlineInputBorder(),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.lightGreenAccent),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    controller: secondValueController,
+                    decoration: InputDecoration(
+                      labelText: "Enter Second Value",
+                      border: OutlineInputBorder(),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.lightGreenAccent),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () => calculation('+'),
+                        child: Icon(Icons.add, color: Colors.white),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.lightBlueAccent,
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () => calculation('-'),
+                        child: FaIcon(
+                          FontAwesomeIcons.minus,
+                          color: Colors.white,
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.lightBlueAccent,
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () => calculation('*'),
+                        child: FaIcon(
+                          FontAwesomeIcons.xmark,
+                          color: Colors.white,
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.lightBlueAccent,
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () => calculation('/'),
+                        child: FaIcon(
+                          FontAwesomeIcons.divide,
+                          color: Colors.white,
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.lightBlueAccent,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextField(
+                    controller: resultController,
+                    readOnly: true,
+                    decoration: InputDecoration(border: OutlineInputBorder()),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
 
       /*
       floatingActionButton: FloatingActionButton(
