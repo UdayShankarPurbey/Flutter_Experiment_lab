@@ -1,5 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_basics/IntroPage.dart';
+import 'package:flutter_basics/profilePage.dart';
 import 'package:flutter_basics/splashScreen.dart';
 import 'package:flutter_basics/ui/font.dart';
 import 'package:flutter_basics/widgets/roundedBtn.dart';
@@ -46,7 +49,7 @@ class MyApp extends StatelessWidget {
       // home: const MyHomePage(title: 'Welcome to Experiment Lab'),
       // home: HomePage(),
       // home: const Intropage(),
-      home : SplashScreen()
+      home: SplashScreen(),
     );
   }
 }
@@ -156,6 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  var nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -1224,7 +1228,28 @@ class _MyHomePageState extends State<MyHomePage> {
       // body: Center(child: Container(child: Text("Welcome to Home Page"))),
 
       // // // // TOPICS : SPLASH SCREEN :-
-      body: Center(child: Container(child: Text("Welcome to Home Page"))),
+      // body: Center(child: Container(child: Text("Welcome to Home Page"))),
+
+      // // // // TOPICS : PASSING DATA FROM ONE SCREEN TO ANOTHER SCREEN  :-
+      body: Center(
+        child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  controller: nameController,
+                  decoration: InputDecoration(border: OutlineInputBorder() , hint: Text("Enter Your Name!!!")),
+                ),
+              ),
+              ElevatedButton(onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage(userName: nameController.text.toString(),)));
+              }, child: Text("Click To View Profile"))
+            ],
+          ),
+        ),
+      ),
 
       /*
       floatingActionButton: FloatingActionButton(
