@@ -146,9 +146,9 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     resultController.text = result.toStringAsFixed(2);
-    // resultValue= result.toStringAsFixed(2); // this works  but not show in ui 
+    // resultValue= result.toStringAsFixed(2); // this works  but not show in ui
     setState(() {
-      resultValue= result.toStringAsFixed(2);
+      resultValue = result.toStringAsFixed(2);
     });
   }
 
@@ -1103,110 +1103,117 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
 
-      // // // // TOPICS :
-      body: Center(
-        child: Container(
-          height: 350,
+      // // // // TOPICS :-
+      // body: Center(
+      //   child: Container(
+      //     height: 350,
+      //     child: Padding(
+      //       padding: const EdgeInsets.all(16.0),
+      //       child: Column(
+      //         children: [
+      //           Padding(
+      //             padding: const EdgeInsets.all(8.0),
+      //             child: TextField(
+      //               keyboardType: TextInputType.number,
+      //               controller: firstValueController,
+      //               decoration: InputDecoration(
+      //                 labelText: "Enter First Value",
+      //                 border: OutlineInputBorder(),
+      //                 focusedBorder: OutlineInputBorder(
+      //                   borderSide: BorderSide(color: Colors.lightGreenAccent),
+      //                 ),
+      //                 errorBorder: OutlineInputBorder(
+      //                   borderSide: BorderSide(color: Colors.red),
+      //                 ),
+      //               ),
+      //             ),
+      //           ),
+      //           Padding(
+      //             padding: const EdgeInsets.all(8.0),
+      //             child: TextField(
+      //               keyboardType: TextInputType.number,
+      //               controller: secondValueController,
+      //               decoration: InputDecoration(
+      //                 labelText: "Enter Second Value",
+      //                 border: OutlineInputBorder(),
+      //                 focusedBorder: OutlineInputBorder(
+      //                   borderSide: BorderSide(color: Colors.lightGreenAccent),
+      //                 ),
+      //                 errorBorder: OutlineInputBorder(
+      //                   borderSide: BorderSide(color: Colors.red),
+      //                 ),
+      //               ),
+      //             ),
+      //           ),
+      //           Padding(
+      //             padding: const EdgeInsets.all(8.0),
+      //             child: Row(
+      //               mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //               children: [
+      //                 ElevatedButton(
+      //                   onPressed: () => calculation('+'),
+      //                   child: Icon(Icons.add, color: Colors.white),
+      //                   style: ElevatedButton.styleFrom(
+      //                     backgroundColor: Colors.lightBlueAccent,
+      //                   ),
+      //                 ),
+      //                 ElevatedButton(
+      //                   onPressed: () => calculation('-'),
+      //                   child: FaIcon(
+      //                     FontAwesomeIcons.minus,
+      //                     color: Colors.white,
+      //                   ),
+      //                   style: ElevatedButton.styleFrom(
+      //                     backgroundColor: Colors.lightBlueAccent,
+      //                   ),
+      //                 ),
+      //                 ElevatedButton(
+      //                   onPressed: () => calculation('*'),
+      //                   child: FaIcon(
+      //                     FontAwesomeIcons.xmark,
+      //                     color: Colors.white,
+      //                   ),
+      //                   style: ElevatedButton.styleFrom(
+      //                     backgroundColor: Colors.lightBlueAccent,
+      //                   ),
+      //                 ),
+      //                 ElevatedButton(
+      //                   onPressed: () => calculation('/'),
+      //                   child: FaIcon(
+      //                     FontAwesomeIcons.divide,
+      //                     color: Colors.white,
+      //                   ),
+      //                   style: ElevatedButton.styleFrom(
+      //                     backgroundColor: Colors.lightBlueAccent,
+      //                   ),
+      //                 ),
+      //               ],
+      //             ),
+      //           ),
+      //           Padding(
+      //             padding: const EdgeInsets.all(8.0),
+      //             child: TextField(
+      //               controller: resultController,
+      //               readOnly: true,
+      //               decoration: InputDecoration(border: OutlineInputBorder()),
+      //             ),
+      //           ),
+      //           Padding(
+      //             padding: const EdgeInsets.all(8.0),
+      //             child: Text("result is : ${resultValue}"),
+      //           )
+      //         ],
+      //       ),
+      //     ),
+      //   ),
+      // ),
 
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextField(
-                    keyboardType: TextInputType.number,
-                    controller: firstValueController,
-                    decoration: InputDecoration(
-                      labelText: "Enter First Value",
-                      border: OutlineInputBorder(),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.lightGreenAccent),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.red),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextField(
-                    keyboardType: TextInputType.number,
-                    controller: secondValueController,
-                    decoration: InputDecoration(
-                      labelText: "Enter Second Value",
-                      border: OutlineInputBorder(),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.lightGreenAccent),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.red),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () => calculation('+'),
-                        child: Icon(Icons.add, color: Colors.white),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.lightBlueAccent,
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: () => calculation('-'),
-                        child: FaIcon(
-                          FontAwesomeIcons.minus,
-                          color: Colors.white,
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.lightBlueAccent,
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: () => calculation('*'),
-                        child: FaIcon(
-                          FontAwesomeIcons.xmark,
-                          color: Colors.white,
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.lightBlueAccent,
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: () => calculation('/'),
-                        child: FaIcon(
-                          FontAwesomeIcons.divide,
-                          color: Colors.white,
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.lightBlueAccent,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextField(
-                    controller: resultController,
-                    readOnly: true,
-                    decoration: InputDecoration(border: OutlineInputBorder()),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("result is : ${resultValue}"),
-                )
-              ],
-            ),
-          ),
+      // // // // TOPICS : CONSTRAINT BOX :-
+      body: ConstrainedBox(
+        child: Text(
+          "hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world ",
         ),
+        constraints: BoxConstraints(maxWidth: 100, maxHeight: 200),
       ),
 
       /*
