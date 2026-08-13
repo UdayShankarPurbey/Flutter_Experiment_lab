@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_basics/IntroPage.dart';
+import 'package:flutter_basics/bmiCalculator.dart';
 import 'package:flutter_basics/profilePage.dart';
 import 'package:flutter_basics/splashScreen.dart';
 import 'package:flutter_basics/ui/font.dart';
@@ -46,10 +47,11 @@ class MyApp extends StatelessWidget {
           headlineSmall: TextStyle(fontWeight: FontWeight.w500, fontSize: 6),
         ),
       ),
-      home: const MyHomePage(title: 'Welcome to Experiment Lab'),
+      // home: const MyHomePage(title: 'Welcome to Experiment Lab'),
       // home: HomePage(),
       // home: const Intropage(),
       // home: SplashScreen(),
+      home: BmiCalculator(),
     );
   }
 }
@@ -1260,30 +1262,34 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       // // // // TOPICS : PASSING DATA FROM ONE SCREEN TO ANOTHER SCREEN  :-
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Start : ${values.start} and End :  ${values.end}"),
-            SizedBox(height: 10),
-            RangeSlider(
-              min: 0,
-              max: 100,
-              values: values,
-              labels: labels,
-              divisions: 5,
-              activeColor: Colors.greenAccent,
-              inactiveColor: Colors.lightBlue,
-              onChanged: (newValue) {
-                setState(() {
-                  values = newValue;
-                });
-                // print("${newValue.start} ${newValue.end}");
-              },
-            ),
-          ],
-        ),
-      ),
+      // body: Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       Text("Start : ${values.start} and End :  ${values.end}"),
+      //       SizedBox(height: 10),
+      //       RangeSlider(
+      //         min: 0,
+      //         max: 100,
+      //         values: values,
+      //         labels: labels,
+      //         divisions: 5,
+      //         activeColor: Colors.greenAccent,
+      //         inactiveColor: Colors.lightBlue,
+      //         onChanged: (newValue) {
+      //           setState(() {
+      //             values = newValue;
+      //           });
+      //           // print("${newValue.start} ${newValue.end}");
+      //         },
+      //       ),
+      //     ],
+      //   ),
+      // ),
+
+      // // // // TOPICS : BMI CALCULATOR :-
+      
+
 
       /*
       floatingActionButton: FloatingActionButton(
