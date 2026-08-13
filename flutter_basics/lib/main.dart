@@ -46,10 +46,10 @@ class MyApp extends StatelessWidget {
           headlineSmall: TextStyle(fontWeight: FontWeight.w500, fontSize: 6),
         ),
       ),
-      // home: const MyHomePage(title: 'Welcome to Experiment Lab'),
+      home: const MyHomePage(title: 'Welcome to Experiment Lab'),
       // home: HomePage(),
       // home: const Intropage(),
-      home: SplashScreen(),
+      // home: SplashScreen(),
     );
   }
 }
@@ -160,8 +160,16 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   var nameController = TextEditingController();
+
+  // RangeValues values = RangeValues(0, 1);
+  RangeValues values = const RangeValues(0, 100);
+
   @override
   Widget build(BuildContext context) {
+    RangeLabels labels = RangeLabels(
+      values.start.toString(),
+      values.end.toString(),
+    );
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -1231,23 +1239,49 @@ class _MyHomePageState extends State<MyHomePage> {
       // body: Center(child: Container(child: Text("Welcome to Home Page"))),
 
       // // // // TOPICS : PASSING DATA FROM ONE SCREEN TO ANOTHER SCREEN  :-
+      // body: Center(
+      //   child: Container(
+      //     child: Column(
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       children: [
+      //         Padding(
+      //           padding: const EdgeInsets.all(8.0),
+      //           child: TextField(
+      //             controller: nameController,
+      //             decoration: InputDecoration(border: OutlineInputBorder() , hint: Text("Enter Your Name!!!")),
+      //           ),
+      //         ),
+      //         ElevatedButton(onPressed: () {
+      //           Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage(userName: nameController.text.toString(),)));
+      //         }, child: Text("Click To View Profile"))
+      //       ],
+      //     ),
+      //   ),
+      // ),
+
+      // // // // TOPICS : PASSING DATA FROM ONE SCREEN TO ANOTHER SCREEN  :-
       body: Center(
-        child: Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextField(
-                  controller: nameController,
-                  decoration: InputDecoration(border: OutlineInputBorder() , hint: Text("Enter Your Name!!!")),
-                ),
-              ),
-              ElevatedButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage(userName: nameController.text.toString(),)));
-              }, child: Text("Click To View Profile"))
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Start : ${values.start} and End :  ${values.end}"),
+            SizedBox(height: 10),
+            RangeSlider(
+              min: 0,
+              max: 100,
+              values: values,
+              labels: labels,
+              divisions: 5,
+              activeColor: Colors.greenAccent,
+              inactiveColor: Colors.lightBlue,
+              onChanged: (newValue) {
+                setState(() {
+                  values = newValue;
+                });
+                // print("${newValue.start} ${newValue.end}");
+              },
+            ),
+          ],
         ),
       ),
 
