@@ -47,11 +47,11 @@ class MyApp extends StatelessWidget {
           headlineSmall: TextStyle(fontWeight: FontWeight.w500, fontSize: 6),
         ),
       ),
-      // home: const MyHomePage(title: 'Welcome to Experiment Lab'),
+      home: const MyHomePage(title: 'Welcome to Experiment Lab'),
       // home: HomePage(),
       // home: const Intropage(),
       // home: SplashScreen(),
-      home: BmiCalculator(),
+      // home: BmiCalculator(),
     );
   }
 }
@@ -165,6 +165,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   // RangeValues values = RangeValues(0, 1);
   RangeValues values = const RangeValues(0, 100);
+
+  var _isAnimated = false;
+  var _width = 100.0;
+  var _height = 100.0;
+  var _color = Colors.red;
 
   @override
   Widget build(BuildContext context) {
@@ -1287,10 +1292,42 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
 
-      // // // // TOPICS : BMI CALCULATOR :-
-      
+      // // // // TOPICS : FOO ANIMATION :-
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AnimatedContainer(
+              width: _width,
+              height: _height,
+              duration: Duration(seconds: 2),
+              color: _color,
+              curve: Curves.bounceIn,
+            ),
 
-
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    if (_isAnimated) {
+                      _width = 200.0;
+                      _height = 50.0;
+                      _color = Colors.green;
+                    } else {
+                      _width = 100.0;
+                      _height = 100.0;
+                      _color = Colors.red;
+                    }
+                    _isAnimated = !_isAnimated;
+                  });
+                },
+                child: Text("Click Here !!!"),
+              ),
+            ),
+          ],
+        ),
+      ),
       /*
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
