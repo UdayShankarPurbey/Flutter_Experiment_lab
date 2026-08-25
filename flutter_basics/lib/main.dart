@@ -174,6 +174,8 @@ class _MyHomePageState extends State<MyHomePage> {
   var _opacity = 1.0;
   var _isVisible = true;
 
+  bool _isVisibleImage = true;
+
   @override
   Widget build(BuildContext context) {
     RangeLabels labels = RangeLabels(
@@ -1332,30 +1334,65 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       // // // // TOPICS : ANIMATED OPACITY :-
+      // body: Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       AnimatedOpacity(
+      //         opacity: _opacity,
+      //         duration: Duration(seconds: 1),
+      //         curve: Curves.bounceInOut,
+      //         child: Container(
+      //           width: 200,
+      //           height: 100,
+      //           color: Colors.tealAccent,
+      //         ),
+      //       ),
+      //       SizedBox(height: 10),
+      //       ElevatedButton(
+      //         onPressed: () {
+      //           setState(() {
+      //             if (_isAnimated) {
+      //               _opacity = 0.0;
+      //             } else {
+      //               _opacity = 1.0;
+      //             }
+      //             _isAnimated = !_isAnimated;
+      //           });
+      //         },
+      //         child: Text("Click Here !!!"),
+      //       ),
+      //     ],
+      //   ),
+      // ),
+
+      // // // // TOPICS : CROSS FADE :-
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AnimatedOpacity(
-              opacity: _opacity,
-              duration: Duration(seconds: 1),
-              curve: Curves.bounceInOut,
-              child: Container(
-                width: 200,
-                height: 100,
-                color: Colors.tealAccent,
+            AnimatedCrossFade(
+              firstChild: Container(
+                height: 300,
+                width: 300,
+                color: Colors.amber,
               ),
+              secondChild: Container(
+                height: 150,
+                width: 150,
+                child: Image.asset('assets/images/user-image-01.jpg'),
+              ),
+              crossFadeState: _isVisibleImage
+                  ? CrossFadeState.showFirst
+                  : CrossFadeState.showSecond,
+              duration: Duration(seconds: 2),
+              sizeCurve: Curves.bounceInOut,
             ),
             SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
                 setState(() {
-                  if (_isAnimated) {
-                    _opacity = 0.0;
-                  } else {
-                    _opacity = 1.0;
-                  }
-                  _isAnimated = !_isAnimated;
+                  _isVisibleImage = !_isVisibleImage;
                 });
               },
               child: Text("Click Here !!!"),
