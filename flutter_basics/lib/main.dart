@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_basics/IntroPage.dart';
 import 'package:flutter_basics/bmiCalculator.dart';
+import 'package:flutter_basics/flowerDetails.dart';
 import 'package:flutter_basics/profilePage.dart';
 import 'package:flutter_basics/splashScreen.dart';
 import 'package:flutter_basics/ui/font.dart';
@@ -1271,7 +1272,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
 
-      // // // // TOPICS : PASSING DATA FROM ONE SCREEN TO ANOTHER SCREEN  :-
+      // // // // TOPICS : RANGE SLIDER :-
       // body: Center(
       //   child: Column(
       //     mainAxisAlignment: MainAxisAlignment.center,
@@ -1367,37 +1368,49 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       // // // // TOPICS : CROSS FADE :-
+      // body: Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       AnimatedCrossFade(
+      //         firstChild: Container(
+      //           height: 300,
+      //           width: 300,
+      //           color: Colors.amber,
+      //         ),
+      //         secondChild: Container(
+      //           height: 150,
+      //           width: 150,
+      //           child: Image.asset('assets/images/user-image-01.jpg'),
+      //         ),
+      //         crossFadeState: _isVisibleImage
+      //             ? CrossFadeState.showFirst
+      //             : CrossFadeState.showSecond,
+      //         duration: Duration(seconds: 2),
+      //         sizeCurve: Curves.bounceInOut,
+      //       ),
+      //       SizedBox(height: 10),
+      //       ElevatedButton(
+      //         onPressed: () {
+      //           setState(() {
+      //             _isVisibleImage = !_isVisibleImage;
+      //           });
+      //         },
+      //         child: Text("Click Here !!!"),
+      //       ),
+      //     ],
+      //   ),
+      // ),
+
+      // // // // TOPICS : HERO ANIMATION :-
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            AnimatedCrossFade(
-              firstChild: Container(
-                height: 300,
-                width: 300,
-                color: Colors.amber,
-              ),
-              secondChild: Container(
-                height: 150,
-                width: 150,
-                child: Image.asset('assets/images/user-image-01.jpg'),
-              ),
-              crossFadeState: _isVisibleImage
-                  ? CrossFadeState.showFirst
-                  : CrossFadeState.showSecond,
-              duration: Duration(seconds: 2),
-              sizeCurve: Curves.bounceInOut,
-            ),
-            SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  _isVisibleImage = !_isVisibleImage;
-                });
-              },
-              child: Text("Click Here !!!"),
-            ),
-          ],
+        child: InkWell(
+          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => FlowerDetails())),
+          child: Container(
+            width: 200,
+            height: 200,
+            child: Hero(tag  : "flower",child: Image.asset('assets/images/flower/flower-02.jpg')),
+          ),
         ),
       ),
 
