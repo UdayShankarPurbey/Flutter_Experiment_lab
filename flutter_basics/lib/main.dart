@@ -171,6 +171,9 @@ class _MyHomePageState extends State<MyHomePage> {
   var _height = 100.0;
   var _color = Colors.red;
 
+  var _opacity = 1.0;
+  var _isVisible = true;
+
   @override
   Widget build(BuildContext context) {
     RangeLabels labels = RangeLabels(
@@ -1293,41 +1296,74 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       // // // // TOPICS : FOO ANIMATION :-
+      // body: Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       AnimatedContainer(
+      //         width: _width,
+      //         height: _height,
+      //         duration: Duration(seconds: 2),
+      //         color: _color,
+      //         curve: Curves.bounceIn,
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: ElevatedButton(
+      //           onPressed: () {
+      //             setState(() {
+      //               if (_isAnimated) {
+      //                 _width = 200.0;
+      //                 _height = 50.0;
+      //                 _color = Colors.green;
+      //               } else {
+      //                 _width = 100.0;
+      //                 _height = 100.0;
+      //                 _color = Colors.red;
+      //               }
+      //               _isAnimated = !_isAnimated;
+      //             });
+      //           },
+      //           child: Text("Click Here !!!"),
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
+
+      // // // // TOPICS : ANIMATED OPACITY :-
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AnimatedContainer(
-              width: _width,
-              height: _height,
-              duration: Duration(seconds: 2),
-              color: _color,
-              curve: Curves.bounceIn,
-            ),
-
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    if (_isAnimated) {
-                      _width = 200.0;
-                      _height = 50.0;
-                      _color = Colors.green;
-                    } else {
-                      _width = 100.0;
-                      _height = 100.0;
-                      _color = Colors.red;
-                    }
-                    _isAnimated = !_isAnimated;
-                  });
-                },
-                child: Text("Click Here !!!"),
+            AnimatedOpacity(
+              opacity: _opacity,
+              duration: Duration(seconds: 1),
+              curve: Curves.bounceInOut,
+              child: Container(
+                width: 200,
+                height: 100,
+                color: Colors.tealAccent,
               ),
+            ),
+            SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  if (_isAnimated) {
+                    _opacity = 0.0;
+                  } else {
+                    _opacity = 1.0;
+                  }
+                  _isAnimated = !_isAnimated;
+                });
+              },
+              child: Text("Click Here !!!"),
             ),
           ],
         ),
       ),
+
       /*
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
