@@ -1425,14 +1425,42 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       // // // // TOPICS : CLIP RRECT :-
-      body: Center(
-        child: ClipRRect(
-          borderRadius: BorderRadius.all(Radius.elliptical(10, 60)),
-          // child: Container(color: Colors.redAccent, width: 200, height: 200),
-          child: Image.asset('assets/images/flower/flower-02.jpg', width: 300, height: 150, fit: BoxFit.cover,),
+      // body: Center(
+      //   child: ClipRRect(
+      //     borderRadius: BorderRadius.all(Radius.elliptical(10, 60)),
+      //     // child: Container(color: Colors.redAccent, width: 200, height: 200),
+      //     child: Image.asset('assets/images/flower/flower-02.jpg', width: 300, height: 150, fit: BoxFit.cover,),
+      //   ),
+      // ),
+
+      // // // // TOPICS : how to add gradient as app background  :-
+      body: Container(
+        decoration: BoxDecoration(
+          // gradient: LinearGradient(colors: [Colors.orange, Colors.yellow, Colors.purple, Colors.pink, Colors.red],)
+          // gradient: LinearGradient(
+          //   colors: [
+          //     Color(0xff20E2D7),
+          //     Color.fromARGB(255, 255, 41, 244),
+          //     Color(0xffF9FEA5),
+          //   ],
+          //   // begin: FractionalOffset(1.0, 0.5),
+          //   // end: FractionalOffset(0.5, 1.0),
+          //   stops: [0.0, 0.2, 1.0],
+          // ),
+           gradient: RadialGradient(
+            colors: [
+              Color(0xff20E2D7),
+              Color.fromARGB(255, 255, 41, 244),
+              Color(0xffF9FEA5),
+            ],
+            center: Alignment.center,
+            stops: [0.0, 0.2, 1.0],
+          ),
         ),
       ),
 
+
+      
       /*
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
