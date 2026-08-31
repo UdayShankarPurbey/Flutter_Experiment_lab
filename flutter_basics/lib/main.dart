@@ -1417,11 +1417,20 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       // // // // TOPICS : LIST WHEEL SCROLLVIEW :-
-      body: ListWheelScrollView(
-        itemExtent: 200,
-        children: arrIndex
-            .map((index) => Container(width: 200, color: Colors.blue))
-            .toList(),
+      // body: ListWheelScrollView(
+      //   itemExtent: 200,
+      //   children: arrIndex
+      //       .map((index) => Container(width: 200, color: Colors.blue))
+      //       .toList(),
+      // ),
+
+      // // // // TOPICS : CLIP RRECT :-
+      body: Center(
+        child: ClipRRect(
+          borderRadius: BorderRadius.all(Radius.elliptical(10, 60)),
+          // child: Container(color: Colors.redAccent, width: 200, height: 200),
+          child: Image.asset('assets/images/flower/flower-02.jpg', width: 300, height: 150, fit: BoxFit.cover,),
+        ),
       ),
 
       /*
