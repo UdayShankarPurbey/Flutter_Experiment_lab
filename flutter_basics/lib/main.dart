@@ -179,6 +179,51 @@ class _MyHomePageState extends State<MyHomePage> {
 
   var arrIndex = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+  var userName = [
+    "Ravi",
+    "Ramesh",
+    "Rajesh",
+    "Rakesh",
+    "Rohit",
+    "Rahul",
+    "Ranjan",
+    "Raghav",
+    "Rupesh",
+    "Ritesh",
+    "Suresh",
+    "Sandeep",
+    "Sanjay",
+    "Satyam",
+    "Saurabh",
+    "Shivam",
+    "Shubham",
+    "Sumit",
+    "Sunil",
+    "Suraj",
+    "Uday",
+    "Umesh",
+    "Uttam",
+    "Vikash",
+    "Vishal",
+    "Vivek",
+    "Yogesh",
+    "Yash",
+    "Yuvraj",
+  ];
+
+  var userList = [
+    {"id": 1, "name": "Ravi", "email": "ravi@gmail.com"},
+    {"id": 2, "name": "Ramesh", "email": "ramesh@gmail.com"},
+    {"id": 3, "name": "Rajesh", "email": "rajesh@gmail.com"},
+    {"id": 4, "name": "Rakesh", "email": "rakesh@gmail.com"},
+    {"id": 5, "name": "Rohit", "email": "rohit4@gmail.com"},
+    {"id": 6, "name": "Rahul", "email": "rahul485@gmail.com"},
+    {"id": 7, "name": "Ranjan", "email": "ranjan@gmail.com"},
+    {"id": 8, "name": "Raghav", "email": "raghav@gmail.com"},
+    {"id": 9, "name": "Rupesh", "email": "rupesh@gmail.com"},
+    {"id": 10, "name": "Ritesh", "email": "ritesh@gmail.com"},
+  ];
+
   @override
   Widget build(BuildContext context) {
     RangeLabels labels = RangeLabels(
@@ -1434,33 +1479,59 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       // // // // TOPICS : how to add gradient as app background  :-
-      body: Container(
-        decoration: BoxDecoration(
-          // gradient: LinearGradient(colors: [Colors.orange, Colors.yellow, Colors.purple, Colors.pink, Colors.red],)
-          // gradient: LinearGradient(
-          //   colors: [
-          //     Color(0xff20E2D7),
-          //     Color.fromARGB(255, 255, 41, 244),
-          //     Color(0xffF9FEA5),
-          //   ],
-          //   // begin: FractionalOffset(1.0, 0.5),
-          //   // end: FractionalOffset(0.5, 1.0),
-          //   stops: [0.0, 0.2, 1.0],
-          // ),
-           gradient: RadialGradient(
-            colors: [
-              Color(0xff20E2D7),
-              Color.fromARGB(255, 255, 41, 244),
-              Color(0xffF9FEA5),
-            ],
-            center: Alignment.center,
-            stops: [0.0, 0.2, 1.0],
-          ),
-        ),
+      // body: Container(
+      //   decoration: BoxDecoration(
+      //     // gradient: LinearGradient(colors: [Colors.orange, Colors.yellow, Colors.purple, Colors.pink, Colors.red],)
+      //     // gradient: LinearGradient(
+      //     //   colors: [
+      //     //     Color(0xff20E2D7),
+      //     //     Color.fromARGB(255, 255, 41, 244),
+      //     //     Color(0xffF9FEA5),
+      //     //   ],
+      //     //   // begin: FractionalOffset(1.0, 0.5),
+      //     //   // end: FractionalOffset(0.5, 1.0),
+      //     //   stops: [0.0, 0.2, 1.0],
+      //     // ),
+      //      gradient: RadialGradient(
+      //       colors: [
+      //         Color(0xff20E2D7),
+      //         Color.fromARGB(255, 255, 41, 244),
+      //         Color(0xffF9FEA5),
+      //       ],
+      //       center: Alignment.center,
+      //       stops: [0.0, 0.2, 1.0],
+      //     ),
+      //   ),
+      // ),
+
+      // // // // TOPICS : MAPPING LISTS TO WIDGETS  :-
+      // body: ListView(
+      //   children: userName.map((name) {
+      //     return Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: Container(child: Text(name)),
+      //     );
+      //   }).toList(),
+      // ),
+      body: ListView(
+        children: userList.map((user) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              child: Row(
+                children: [
+                  CircleAvatar(child: Text("${user["id"]}"),),
+                  SizedBox(width: 10),
+                  Column(
+                    children: [Text("${user["name"]}"), Text("${user["email"]}")],
+                  ),
+                ],
+              ),
+            ),
+          );
+        }).toList(),
       ),
 
-
-      
       /*
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
