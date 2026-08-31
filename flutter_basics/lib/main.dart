@@ -177,6 +177,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   bool _isVisibleImage = true;
 
+  var arrIndex = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
   @override
   Widget build(BuildContext context) {
     RangeLabels labels = RangeLabels(
@@ -1403,15 +1405,23 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       // // // // TOPICS : HERO ANIMATION :-
-      body: Center(
-        child: InkWell(
-          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => FlowerDetails())),
-          child: Container(
-            width: 200,
-            height: 200,
-            child: Hero(tag  : "flower",child: Image.asset('assets/images/flower/flower-02.jpg')),
-          ),
-        ),
+      // body: Center(
+      //   child: InkWell(
+      //     onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => FlowerDetails())),
+      //     child: Container(
+      //       width: 200,
+      //       height: 200,
+      //       child: Hero(tag  : "flower",child: Image.asset('assets/images/flower/flower-02.jpg')),
+      //     ),
+      //   ),
+      // ),
+
+      // // // // TOPICS : LIST WHEEL SCROLLVIEW :-
+      body: ListWheelScrollView(
+        itemExtent: 200,
+        children: arrIndex
+            .map((index) => Container(width: 200, color: Colors.blue))
+            .toList(),
       ),
 
       /*
