@@ -75,7 +75,8 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage>
+    with SingleTickerProviderStateMixin {
   int _counter = 0;
 
   void _incrementCounter() {
@@ -223,6 +224,32 @@ class _MyHomePageState extends State<MyHomePage> {
     {"id": 9, "name": "Rupesh", "email": "rupesh@gmail.com"},
     {"id": 10, "name": "Ritesh", "email": "ritesh@gmail.com"},
   ];
+
+  late Animation animation;
+  late Animation colorAnimation;
+  late AnimationController animationController;
+
+  @override
+  void initState() {
+    super.initState();
+
+    animationController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 10),
+    );
+    animation = Tween(begin: 0.0, end: 200.0).animate(animationController);
+    colorAnimation = ColorTween(begin: const Color.fromARGB(255, 228, 21, 56), end: const Color.fromARGB(255, 196, 49, 209)).animate(animationController);
+
+    animationController.addListener(() {
+      print(animation.value);
+      setState(() {
+        
+      });
+    });
+
+    animationController.forward();
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -1513,24 +1540,31 @@ class _MyHomePageState extends State<MyHomePage> {
       //     );
       //   }).toList(),
       // ),
-      body: ListView(
-        children: userList.map((user) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              child: Row(
-                children: [
-                  CircleAvatar(child: Text("${user["id"]}"),),
-                  SizedBox(width: 10),
-                  Column(
-                    children: [Text("${user["name"]}"), Text("${user["email"]}")],
-                  ),
-                ],
-              ),
-            ),
-          );
-        }).toList(),
-      ),
+      // body: ListView(
+      //   children: userList.map((user) {
+      //     return Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: Container(
+      //         child: Row(
+      //           children: [
+      //             CircleAvatar(child: Text("${user["id"]}"),),
+      //             SizedBox(width: 10),
+      //             Column(
+      //               children: [Text("${user["name"]}"), Text("${user["email"]}")],
+      //             ),
+      //           ],
+      //         ),
+      //       ),
+      //     );
+      //   }).toList(),
+      // ),
+
+      // // // // TOPICS : TWIN ANIMATION  :-
+      body: Center(child: Container(
+        width : animation.value,
+        height : animation.value,
+        color : colorAnimation.value,
+      )),
 
       /*
       floatingActionButton: FloatingActionButton(
