@@ -225,31 +225,55 @@ class _MyHomePageState extends State<MyHomePage>
     {"id": 10, "name": "Ritesh", "email": "ritesh@gmail.com"},
   ];
 
-  late Animation animation;
-  late Animation colorAnimation;
-  late AnimationController animationController;
+  // late Animation animation;
+  // late Animation colorAnimation;
+  // late AnimationController animationController;
+
+  // @override
+  // void initState() {
+  //   super.initState();
+
+  //   animationController = AnimationController(
+  //     vsync: this,
+  //     duration: Duration(seconds: 10),
+  //   );
+  //   animation = Tween(begin: 0.0, end: 200.0).animate(animationController);
+  //   colorAnimation = ColorTween(begin: const Color.fromARGB(255, 228, 21, 56), end: const Color.fromARGB(255, 196, 49, 209)).animate(animationController);
+
+  //   animationController.addListener(() {
+  //     print(animation.value);
+  //     setState(() {
+
+  //     });
+  //   });
+
+  //   animationController.forward();
+
+  // }
+
+  // late Animation _animation;
+  late AnimationController _animationController;
 
   @override
   void initState() {
     super.initState();
 
-    animationController = AnimationController(
+    _animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 10),
+      duration: Duration(seconds: 5),lowerBound: 0.5
     );
-    animation = Tween(begin: 0.0, end: 200.0).animate(animationController);
-    colorAnimation = ColorTween(begin: const Color.fromARGB(255, 228, 21, 56), end: const Color.fromARGB(255, 196, 49, 209)).animate(animationController);
+    // _animation = Tween(begin: 0.0, end: 1.0).animate(_animationController);
 
-    animationController.addListener(() {
-      print(animation.value);
+    _animationController.addListener(() {
       setState(() {
         
       });
     });
 
-    animationController.forward();
-
+    _animationController.forward();
   }
+
+  var radiusList = [150.0, 200.0, 250.0, 300.0, 350.0];
 
   @override
   Widget build(BuildContext context) {
@@ -1560,11 +1584,22 @@ class _MyHomePageState extends State<MyHomePage>
       // ),
 
       // // // // TOPICS : TWIN ANIMATION  :-
-      body: Center(child: Container(
-        width : animation.value,
-        height : animation.value,
-        color : colorAnimation.value,
-      )),
+      // body: Center(child: Container(
+      //   width : animation.value,
+      //   height : animation.value,
+      //   color : colorAnimation.value,
+      // )),
+
+      // // // // TOPICS : RIPPLE EFFECT ANIMATION  :-
+      body: Center(
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            for(var i = 0 ; i< radiusList.length; i++) buildRippleContainer(radiusList[i]),
+            Icon(Icons.call, color: Colors.white, size: 50),
+          ]
+        ),
+      ),
 
       /*
       floatingActionButton: FloatingActionButton(
@@ -1573,6 +1608,17 @@ class _MyHomePageState extends State<MyHomePage>
         child: const Icon(Icons.add),
       ),
       */
+    );
+  }
+
+  Widget buildRippleContainer(double radius) {
+   return Container(
+      width: radius * _animationController.value,
+      height: radius * _animationController.value,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.greenAccent.withOpacity(1.0 - _animationController.value),
+      ),
     );
   }
 }
