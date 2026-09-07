@@ -10,6 +10,7 @@ import 'package:flutter_basics/ui/font.dart';
 import 'package:flutter_basics/widgets/roundedBtn.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const MyApp());
@@ -254,26 +255,43 @@ class _MyHomePageState extends State<MyHomePage>
   // late Animation _animation;
   late AnimationController _animationController;
 
+  // @override
+  // void initState() {
+  //   super.initState();
+
+  //   _animationController = AnimationController(
+  //     vsync: this,
+  //     duration: Duration(seconds: 5),
+  //     lowerBound: 0.5,
+  //   );
+  //   // _animation = Tween(begin: 0.0, end: 1.0).animate(_animationController);
+
+  //   _animationController.addListener(() {
+  //     setState(() {});
+  //   });
+
+  //   _animationController.forward();
+  // }
+
+  var radiusList = [150.0, 200.0, 250.0, 300.0, 350.0];
+
+  var profileName;
+  var profileNameController = TextEditingController();
+
   @override
   void initState() {
     super.initState();
-
-    _animationController = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 5),lowerBound: 0.5
-    );
-    // _animation = Tween(begin: 0.0, end: 1.0).animate(_animationController);
-
-    _animationController.addListener(() {
-      setState(() {
-        
-      });
-    });
-
-    _animationController.forward();
+    loadProfile();
   }
 
-  var radiusList = [150.0, 200.0, 250.0, 300.0, 350.0];
+  void loadProfile() async {
+    final name = await getValue();
+
+    setState(() {
+      profileName = name;
+      profileNameController.text = name;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -1591,13 +1609,54 @@ class _MyHomePageState extends State<MyHomePage>
       // )),
 
       // // // // TOPICS : RIPPLE EFFECT ANIMATION  :-
+      // body: Center(
+      //   child: Stack(
+      //     alignment: Alignment.center,
+      //     children: [
+      //       for(var i = 0 ; i< radiusList.length; i++) buildRippleContainer(radiusList[i]),
+      //       Icon(Icons.call, color: Colors.white, size: 50),
+      //     ]
+      //   ),
+      // ),
+
+      // // // // TOPICS : SHARED PREFERENCES :-
       body: Center(
-        child: Stack(
-          alignment: Alignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            for(var i = 0 ; i< radiusList.length; i++) buildRippleContainer(radiusList[i]),
-            Icon(Icons.call, color: Colors.white, size: 50),
-          ]
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text("Profile Name : ${profileName}"),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                controller: profileNameController,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hint: Text("Enter Profile Name"),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () async {
+                  var prefs = await SharedPreferences.getInstance();
+                  prefs.setString(
+                    "profileName",
+                    profileNameController.text.toString(),
+                  );
+
+                  setState(() {
+                    profileName = profileNameController.text.toString();
+                    profileNameController.text = "";
+                  });
+                },
+                child: Text("Save Profile Name"),
+              ),
+            ),
+          ],
         ),
       ),
 
@@ -1612,7 +1671,7 @@ class _MyHomePageState extends State<MyHomePage>
   }
 
   Widget buildRippleContainer(double radius) {
-   return Container(
+    return Container(
       width: radius * _animationController.value,
       height: radius * _animationController.value,
       decoration: BoxDecoration(
@@ -1621,6 +1680,11 @@ class _MyHomePageState extends State<MyHomePage>
       ),
     );
   }
+}
+
+Future<String> getValue() async {
+  var prefs = await SharedPreferences.getInstance();
+  return prefs.getString("profileName") ?? "";
 }
 
 class CatItems extends StatelessWidget {
