@@ -5,6 +5,7 @@ import 'package:flutter_basics/IntroPage.dart';
 import 'package:flutter_basics/bmiCalculator.dart';
 import 'package:flutter_basics/flowerDetails.dart';
 import 'package:flutter_basics/profilePage.dart';
+import 'package:flutter_basics/sharedPref/splashScreenPage.dart';
 import 'package:flutter_basics/splashScreen.dart';
 import 'package:flutter_basics/ui/font.dart';
 import 'package:flutter_basics/widgets/roundedBtn.dart';
@@ -49,11 +50,12 @@ class MyApp extends StatelessWidget {
           headlineSmall: TextStyle(fontWeight: FontWeight.w500, fontSize: 6),
         ),
       ),
-      home: const MyHomePage(title: 'Welcome to Experiment Lab'),
+      // home: const MyHomePage(title: 'Welcome to Experiment Lab'),
       // home: HomePage(),
       // home: const Intropage(),
       // home: SplashScreen(),
       // home: BmiCalculator(),
+      home: const SplashScreenSharedPref(),
     );
   }
 }
@@ -1620,45 +1622,48 @@ class _MyHomePageState extends State<MyHomePage>
       // ),
 
       // // // // TOPICS : SHARED PREFERENCES :-
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text("Profile Name : ${profileName}"),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                controller: profileNameController,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hint: Text("Enter Profile Name"),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                onPressed: () async {
-                  var prefs = await SharedPreferences.getInstance();
-                  prefs.setString(
-                    "profileName",
-                    profileNameController.text.toString(),
-                  );
+      // body: Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Text("Profile Name : ${profileName}"),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: TextField(
+      //           controller: profileNameController,
+      //           decoration: InputDecoration(
+      //             border: OutlineInputBorder(),
+      //             hint: Text("Enter Profile Name"),
+      //           ),
+      //         ),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: ElevatedButton(
+      //           onPressed: () async {
+      //             var prefs = await SharedPreferences.getInstance();
+      //             prefs.setString(
+      //               "profileName",
+      //               profileNameController.text.toString(),
+      //             );
+      //             setState(() {
+      //               profileName = profileNameController.text.toString();
+      //               profileNameController.text = "";
+      //             });
+      //           },
+      //           child: Text("Save Profile Name"),
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
 
-                  setState(() {
-                    profileName = profileNameController.text.toString();
-                    profileNameController.text = "";
-                  });
-                },
-                child: Text("Save Profile Name"),
-              ),
-            ),
-          ],
-        ),
-      ),
+      // // // // TOPICS : REAL LIFE USAGES OF SHARED PREFERENCES :-
+      body: Container(),
+
 
       /*
       floatingActionButton: FloatingActionButton(
